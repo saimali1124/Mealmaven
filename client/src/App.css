@@ -1,0 +1,581 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.demo {
+  color: yellowgreen;
+}
+
+.login-section {
+  padding: 50px 0;
+}
+
+.login-form {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 35px;
+  text-align: center;
+  width: 400px; 
+  margin: 0 auto; 
+}
+
+.login-form2 {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 35px;
+  text-align: center;
+}
+
+.login-form3 {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 35px;
+  text-align: center;
+  width: 400px; 
+  margin: 0 auto; 
+  margin-bottom: 180px;
+}
+
+.form-title {
+  color: #070707;
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+}
+
+.form-input {
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.form-input:focus {
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-button {
+  margin-top: 20px;
+}
+
+.button-primary {
+  background-color: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.button-primary:hover {
+  background-color: #3e8e41;
+}
+
+.login-image {
+  margin-top: 30px;
+}
+
+.login-image-link {
+  color: #353434;
+  text-decoration: none;
+  font-weight: bold;
+  padding-left: 210px;
+  padding-top: 5px;
+}
+
+.login-image-link2 {
+  color: #3e8e41;
+  text-decoration: none;
+  font-weight: bold;
+  padding-left: 400px;
+  padding-top: 10px;
+}
+
+.signup-image-link {
+  color: #0367da;
+  text-decoration: none;
+  font-weight: bold;
+  padding-left: 15px;
+  padding-top: 50px;
+}
+
+.signup2-image-link {
+  color: #3c913e;
+  text-decoration: none;
+  font-weight: bold;
+  padding-left: 15px;
+  padding-top: 20px;
+}
+
+
+
+.login-image-link:hover {
+  text-decoration: underline;
+}
+
+.home-page img {
+  max-width: 100%;
+  height: auto;
+}
+
+.home-page {
+  background-image: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://images.unsplash.com/photo-1556911220-bff31c812dba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3MzkxNTEyNQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grey-page {
+  background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grey-page2 {
+  background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.grey-page3 {
+  background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
+  background-size: cover;
+  background-position: center center;
+  height: 100%; /* Set the height to the full viewport height */
+  width: 100%;
+  display: flex; /* Use flexbox to align the text vertically */
+  flex-direction: column; /* Stack the text vertically */
+  justify-content: flex-start; /* Align the text to the top */
+}
+
+.form-submit {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 200px;
+  padding: 10px 135px;
+}
+
+.form-submit:hover {
+  background-color: #0069d9;
+}
+
+.recipes-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.recipes-header {
+  font-size: 32px;
+  margin-bottom: 10px;
+  text-align: center;
+  margin-top: -10px;
+}
+
+.recipes-list {
+  list-style: none;
+  padding: 0;
+}
+
+.custrecipe {
+  border: 1px solid #807f7f;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.recipe {
+  border: 1px solid #fcfbfb;
+  margin-bottom: 20px;
+  padding: 26px;
+  margin-left: 20px;
+}
+
+.recipe-name {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.recipe-ingredients,
+.recipe-instructions {
+  margin: 0;
+}
+
+.recipe-ingredients {
+  margin-bottom: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  margin: 0 10px;
+}
+
+.containerr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
+  height: 100vh;
+}
+
+.recipe-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.recipe-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.recipe-action-btn {
+  color: #000;
+}
+
+.recipe-action-btn:hover {
+  color: #ff0000;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.left-section {
+  flex: 0 0 50%; 
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.right-section {
+  flex: 0 0 50%; 
+  background-color: #f5f1ee;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.recipe-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.recipes {
+  padding-right: 50px;
+}
+
+.recipes-header {
+  font-size: 36px;
+  margin-bottom: 20px;
+  margin-left: 45px;
+  margin-top: 10px;
+}
+
+.recipes-list {
+  list-style: none;
+  padding: 0;
+  margin-left: 60px;
+  background-color: white;
+  box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.1);
+}
+
+.recipe {
+  margin-bottom: 20px;
+}
+
+.food-image {
+  width: 90%;
+  margin-top: 5px;
+  margin-bottom: 1em;
+}
+
+.food-text {
+  font-size: 18px;
+  margin-top: 20px;
+  
+  margin-right: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+.food-text2{
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  margin-right: 3rem;
+}
+
+.footer {
+  background: #152F4F;
+  color: white;
+}
+
+.footer .links ul {
+  list-style-type: none;
+}
+
+.footer .links li a {
+  color: white;
+  transition: color .2s;
+}
+
+.footer .links li a:hover {
+  text-decoration: none;
+  color: #4180CB;
+}
+
+.footer .about-company i {
+  font-size: 25px;
+}
+
+.footer .about-company a {
+  color: white;
+  transition: color .2s;
+}
+
+.footer .about-company a:hover {
+  color: #4180CB;
+}
+
+.footer .location i {
+  font-size: 18px;
+}
+
+.footer .copyright p {
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+
+.c1, .c2, .c3, .c4, .c5, .c6, .c7{
+  display: centre;
+  margin-bottom: 10px;
+}
+
+.c8{
+  text-align: centre;
+  margin-left: 25px;
+}
+
+c9{
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 90%;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[name='height'], input[name='weight'], 
+input[name='email2'],
+input[name='age'], textarea[name='prefer'],
+textarea[name='avoid'] ,select[name='goal'] {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 70%;
+}
+
+select option[value=''] {
+  color: #ccc;
+}
+
+button[type='submitDiet'] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  margin-top: 60px;
+  margin-left: -130px;
+  width: 70%;
+  cursor: pointer;
+}
+
+button[type='submitDiet']:hover {
+  background-color: #0069d9;
+}
+
+.login-link {
+  border: 1.5px solid rgb(100, 99, 99);
+  border-radius: 4px;
+  margin-right: 17px;
+}
+
+.hero {
+  background-color: #f2f2f2;
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.container3 {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.parat {
+  font-size: 22px;
+  left: 15%;
+  margin-left: 99px;
+  transform: translate(169%, 65%);
+  width: 420px;
+  font-weight:400
+}
+
+.AbHead {
+  font-family: meraFont;
+  position: absolute;
+  top: 12%;
+  color: white;
+  text-shadow: 4px 0px 4px #000;
+  margin-left: 380px;
+  padding: 5px 15px;
+  transform: translate(60%, 25%);
+  font-size: 55px;
+  font-family: Poppins;
+  font-weight: bold;
+}
+
+.AboutUsText {
+  width: 600px;
+  font-weight: bold;
+  margin-top: 90px;
+  margin-left: 50px;
+  text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
+  transform: translate(57%, 90%);
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 25px;
+  color: #fcfbfb;
+}
+
+.content {
+  height: 100vh;
+}
+
+
+
+.text-content {
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  position: absolute;
+  top: 28%;
+  left: 30%;
+  padding: 5px 15px;
+  transform: translate(-50%, -50%);
+  color: white;
+  border-radius: 1px;
+  font-size: 120px;
+  text-shadow: 5px 0px 5px rgb(0, 0, 5);
+}
+
+h8 {
+  position: absolute;
+  top: 40%;
+  left: 23.5%;
+  padding: 5px 15px;
+  transform: translate(-50%, -50%);
+  color: white;
+  border-radius: 10px;
+  font-size: 34px;
+  font-family: 'Times New Roman', Times, serif;
+  text-shadow: 3px 0px 3px rgb(0, 0, 3);
+}
+
+h9 {
+  font-family: Poppins;
+  position: absolute;
+  top: 30%;
+  left:60%;
+  margin-left: 210px;
+  padding: 5px 15px;
+  transform: translate(-50%, -50%);
+  font-size: 35px;
+  font-weight: bold;
+}

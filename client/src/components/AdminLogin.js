@@ -52,7 +52,7 @@ const AdminLogin= () => {
           <div className="login-content row">
             <div className="col-md-15">
               <div className="login-form">
-                <h2 className="form-title">Admin Login</h2>
+                <h2 className="form-title">Nutritionist Login</h2>
                 <form method="POST" className="register-form" id="register-form">
                   <div className="form-group">
                     <label htmlFor="email">

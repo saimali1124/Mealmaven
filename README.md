@@ -12,6 +12,8 @@ Mealmaven is a comprehensive solution that combines the power of modern technolo
 
 To run the app open two terminals, one for the server, other for the client
 
-In server terminal run commands: 'cd server' then 'node app.js'
+In server terminal run commands: 'cd server' then 'npm install dotenv' then 'node app.js'
 
-In client terminal run commands: 'cd client' then 'npm start'
+In client terminal run commands: 'cd client' then 'npm install react-scripts --save' then 'npm start'
+
+NOTE: The install commands mentioned above need to be run only the first time.

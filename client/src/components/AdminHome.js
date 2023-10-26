@@ -43,7 +43,7 @@ const AdminHome = () => {
 
 <div className="d-flex flex-column justify-content-center align-items-center" style={{ height: '100vh' }}>
   <div className="text-center mb-7">
-    <h5 className="lead" style={{ fontSize: '2.5rem', color: 'black' }}>Welcome Admin</h5>
+    <h5 className="lead" style={{ fontSize: '2.5rem', color: 'black' }}>Welcome Nutritionist</h5>
     <h5 className="display-4" style={{ fontSize: '4rem', color: 'black' }}>{adminData.name}</h5>
     <h5 className="lead" style={{ fontSize: '2.5rem', color: 'black' }}>Happy to see you back</h5>
   </div>

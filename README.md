@@ -17,3 +17,9 @@ In server terminal run commands: 'cd server' then 'npm install dotenv' then 'nod
 In client terminal run commands: 'cd client' then 'npm install react-scripts --save' then 'npm start'
 
 NOTE: The install commands mentioned above need to be run only the first time.
+
+# Opening the Nutritionist and Admin interface
+
+Nutritionist: http://localhost:3000/AdminLogin
+
+Admin: http://localhost:3000/SuperAdminLogin

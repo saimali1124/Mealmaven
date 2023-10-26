@@ -3,11 +3,12 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { NavLink } from 'react-router-dom';
 import m from '../images/m.png';
 
-const AdminNavbar = () => {
-  return (<>
+const SuperAdminHomeNavbar = () => {
+  return (
+    <>
 <nav className="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark">
         <div className="container-fluid">
-          <NavLink className="navbar-brand" to="#" style={{ fontFamily: "Courier New", fontSize: "24px"}}>
+          <NavLink className="navbar-brand" to="#" style={{ fontFamily: 'Courier New', fontSize: "24px"}}>
             <img src={m} alt="MealMaven Logo" style={{width: "50px", marginRight: "10px"}} />
             MealMaven
           </NavLink>
@@ -16,25 +17,18 @@ const AdminNavbar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
-                <NavLink className="nav-link active" aria-current="page" to="/AdminHome">Home</NavLink>
+              <li className="nav-item" style={{marginRight: '1rem'}}>
+                <NavLink className="nav-link" to="/SuperAdminSignup">Sign Up</NavLink>
               </li>
-              {/* <li className="nav-item">
-                <NavLink className="nav-link" to="/ManageRecipe">Manage Recipe</NavLink>
-              </li> */}
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/ManageDiet">Manage Diet</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/AdminDietPlan">Assign Diet</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/AdminLogin">Log Out</NavLink>
+              <li className="nav-item login-link">
+                <NavLink className="nav-link" to="/SuperAdminLogin">Login</NavLink>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-    </>)
+    </>
+  )
 }
-export default AdminNavbar
+
+export default SuperAdminHomeNavbar

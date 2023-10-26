@@ -1,12 +1,12 @@
 import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import AdminHomeNavbar from './AdminHomeNavbar';
+import SuperAdminHomeNavbar from './SuperAdminHomeNavbar';
 import Footer from './Footer';
 
-const AdminSignup = () => {
+const SuperAdminSignup = () => {
     const history = useNavigate();
-    const [Admin, setAdmin] = useState({name:"", email:"", password:"",cpassword:""});
+    const [SuperAdmin, setSuperAdmin] = useState({name:"", email:"", password:"",cpassword:""});
 
     let name, value;
     const handleInputs = (e) => {
@@ -14,49 +14,49 @@ const AdminSignup = () => {
         name = e.target.name;
         value= e.target.value;
 
-        setAdmin({...Admin, [name]:value});
+        setSuperAdmin({...SuperAdmin, [name]:value});
     }
 
     const PostData = async (e) => {
         e.preventDefault();
 
-        if (!Admin.email || !Admin.password || !Admin.cpassword || !Admin.name) {
+        if (!SuperAdmin.email || !SuperAdmin.password || !SuperAdmin.cpassword || !SuperAdmin.name) {
             window.alert('Please fill all the fields!');
             return;
         }
 
-        if(Admin.name.length < 3)
+        if(SuperAdmin.name.length < 3)
         {
             window.alert('Name must have atleast 3 characters!');
             return;
         }
 
-        if(Admin.password.length < 8)
+        if(SuperAdmin.password.length < 8)
         {
             window.alert('Password must have atleast 8 characters!');
             return;
         }
 
-        if(!Admin.email.includes('@gmail.com'))
+        if(!SuperAdmin.email.includes('@gmail.com'))
         {
             window.alert('Invalid email address!');
             return;
         }
 
-        if(!/[A-Z]/.test(Admin.password))
+        if(!/[A-Z]/.test(SuperAdmin.password))
         {
             window.alert('Password must have atleast 1 uppercase letter!');
             return;
         }
 
-        if(!/\d/.test(Admin.password))
+        if(!/\d/.test(SuperAdmin.password))
         {
             window.alert('Password must have atleast 1 numerical digit!');
             return;
         }
 
-        const { name, email, password, cpassword } = Admin;
-        const res = await fetch("/registerAdmin", {
+        const { name, email, password, cpassword } = SuperAdmin;
+        const res = await fetch("/registerSuperAdmin", {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json"
@@ -76,7 +76,7 @@ const AdminSignup = () => {
         } else {
             window.alert("Registeration Successful");
 
-            history("/AdminLogin");
+            history("/SuperAdminLogin");
         }
 
 
@@ -84,7 +84,7 @@ const AdminSignup = () => {
 
   return (
     <>
-    <AdminHomeNavbar/>
+    <SuperAdminHomeNavbar/>
     <div className='home-page'>
 
 <section className='login-section'>
@@ -92,7 +92,7 @@ const AdminSignup = () => {
     <div className="login-content row">
     <div className="col-md-6">
       <div className="login-form" >
-        <h2 className="form-title">Nutritionist Sign Up</h2>
+        <h2 className="form-title">Admin Sign Up</h2>
         <form className="register-form" id="register-form">
           <div className="form-group">
             <label htmlFor="name">
@@ -103,7 +103,7 @@ const AdminSignup = () => {
               name="name" 
               id="name" 
               autoComplete='off' 
-              value={Admin.name} 
+              value={SuperAdmin.name} 
               onChange={handleInputs}
               placeholder='Your Name' 
               style={{width: "100%", maxWidth: "400px", margin: "0 auto"}}
@@ -120,7 +120,7 @@ const AdminSignup = () => {
               name="email" 
               id="email" 
               autoComplete='off' 
-              value={Admin.email} 
+              value={SuperAdmin.email} 
               onChange={handleInputs}
               placeholder='Your Email' 
               style={{width: "100%", maxWidth: "400px", margin: "0 auto"}}
@@ -137,7 +137,7 @@ const AdminSignup = () => {
               name="password" 
               id="password" 
               autoComplete='off' 
-              value={Admin.password} 
+              value={SuperAdmin.password} 
               onChange={handleInputs}
               placeholder='Your Password' 
               style={{width: "100%", maxWidth: "400px", margin: "0 auto"}}
@@ -154,7 +154,7 @@ const AdminSignup = () => {
               name="cpassword" 
               id="cpassword" 
               autoComplete='off' 
-              value={Admin.cpassword} 
+              value={SuperAdmin.cpassword} 
               onChange={handleInputs}
               placeholder='Confirm Your Password' 
               style={{width: "100%", maxWidth: "400px", margin: "0 auto"}}
@@ -174,7 +174,7 @@ const AdminSignup = () => {
           </div>
           <br></br>
           <p style={{marginBottom: '-0.8rem'}}>Already on MealMaven?
-          <NavLink to="/AdminLogin" className="signup-image-link">Sign in</NavLink>
+          <NavLink to="/SuperAdminLogin" className="signup-image-link">Sign in</NavLink>
           </p>
         </form>
       </div>
@@ -187,4 +187,4 @@ const AdminSignup = () => {
            </>
   )
 }
-export default AdminSignup
+export default SuperAdminSignup

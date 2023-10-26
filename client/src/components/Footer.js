@@ -10,7 +10,9 @@ const Footer = () => {
             <div className="col-lg-5 col-xs-12 about-company">
               <h2>MealMaven</h2>
               <p className="pr-5 text-white-50">Healthy eating is a journey, not a destination. Every healthy choice you make is a step in the right direction</p>
-              <p><a href="/"><i className="fa fa-facebook-square mr-1" /></a><a href="/"><i className="fa fa-linkedin-square" /></a></p>
+              <a href="https://www.facebook.com/muhammad.saim.50" target="_blank" rel="noreferrer"><i class='bx bxl-facebook-circle icon'></i></a>
+              <a href= "https://www.linkedin.com/in/saim-ali-cs/" target="_blank" rel="noreferrer"><i class='bx bxl-linkedin-square icon' ></i></a>
+              <a href="https://www.instagram.com/saim.ali.1" target="_blank" rel="noreferrer"><i class='bx bxl-instagram-alt icon' ></i></a>
             </div>
             <div className="col-lg-3 col-xs-12 links">
               <h4 className="mt-lg-0 mt-sm-3">Useful Links</h4>
@@ -24,8 +26,12 @@ const Footer = () => {
             <div className="col-lg-4 col-xs-12 location">
               <h4 className="mt-lg-0 mt-sm-4">Location</h4>
               <p> 90, Sheldom Street, Lahore, Pakistan</p>
-              <p className="mb-0"><i className="fa fa-phone mr-3" />(+92) 423-57689</p>
-              <p><i className="fa fa-envelope-o mr-3" />info@MealMaven.com</p>
+              <p className="mb-0"><i class='bx bxs-phone'></i>&nbsp;(+92) 423-57689</p>
+              <p><i class='bx bx-envelope' ></i>&nbsp;info@MealMaven.com</p>
+              {/* <h4 className="mt-lg-0 mt-sm-4">Follow Us</h4>
+              <a href="https://www.facebook.com/muhammad.saim.50" target="_blank" rel="noreferrer"><i class='bx bxl-facebook-circle icon'></i></a>
+              <a href= "https://www.twitter.com/SaimAli9101" target="_blank" rel="noreferrer"> <i class='bx bxl-twitter icon' ></i></a>
+              <a href="https://www.instagram.com/saim.ali.1" target="_blank" rel="noreferrer"><i class='bx bxl-instagram-alt icon' ></i></a> */}
             </div>
           </div>
           <div className="row mt-5">

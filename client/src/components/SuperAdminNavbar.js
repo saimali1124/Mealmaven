@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { NavLink } from 'react-router-dom';
 import m from '../images/m.png';
 
-const AdminNavbar = () => {
+const SuperAdminNavbar = () => {
   return (<>
 <nav className="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark">
         <div className="container-fluid">
@@ -17,19 +17,16 @@ const AdminNavbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <NavLink className="nav-link active" aria-current="page" to="/AdminHome">Home</NavLink>
+                <NavLink className="nav-link active" aria-current="page" to="/SuperAdminHome">Home</NavLink>
               </li>
-              {/* <li className="nav-item">
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/Dashboard">Dashboard</NavLink>
+              </li>
+              <li className="nav-item">
                 <NavLink className="nav-link" to="/ManageRecipe">Manage Recipe</NavLink>
-              </li> */}
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/ManageDiet">Manage Diet</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/AdminDietPlan">Assign Diet</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/AdminLogin">Log Out</NavLink>
+                <NavLink className="nav-link" to="/SuperAdminLogin">Log Out</NavLink>
               </li>
             </ul>
           </div>
@@ -37,4 +34,4 @@ const AdminNavbar = () => {
       </nav>
     </>)
 }
-export default AdminNavbar
+export default SuperAdminNavbar

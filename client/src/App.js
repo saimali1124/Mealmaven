@@ -21,6 +21,10 @@ import UserDietPlan from './components/UserDietPlan';
 import AdminDietPlan from './components/AdminDietPlan';
 import CustomRecipe from './components/CustomRecipe';
 import PaymentForm from './components/PaymentForm';
+import SuperAdminSignup from './components/SuperAdminSignup';
+import SuperAdminLogin from './components/SuperAdminLogin';
+import SuperAdminHome from './components/SuperAdminHome';
+import Dashboard from './components/Dashboard'
 
 const App = () => {
   return (
@@ -46,6 +50,10 @@ const App = () => {
         <Route path="/CustomRecipe" element={<CustomRecipe/>}/>
         <Route element={<ErrorPage/>}/>
         <Route path='/Payment' element={<PaymentForm/>}/>
+        <Route path="/SuperAdminSignup" element={<SuperAdminSignup/>}/>
+        <Route path="/SuperAdminLogin" element={<SuperAdminLogin/>}/>
+        <Route path="/SuperAdminHome" element={<SuperAdminHome/>}/>
+        <Route path="/Dashboard" element={<Dashboard/>}/>
     </Routes>
     </>
   )

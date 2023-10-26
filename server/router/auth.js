@@ -3,6 +3,7 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 const authenticate = require("../middleware/authenticate");
 const authenticateAdmin = require("../middleware/authenticateAdmin");
+const authenticateSuperAdmin = require("../middleware/authenticateSuperAdmin");
 const cokie = require ('cookie-parser');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 router.use(cokie());
@@ -10,6 +11,7 @@ router.use(cokie());
 require('../db/connect'); 
 const User = require("../models/userschema");
 const Admin = require("../models/adminschema");
+const SuperAdmin = require("../models/superadminschema");
 
 router.get('/', (req, res) => {
     res.send("Hello from server");
@@ -80,6 +82,42 @@ router.post('/registerAdmin', async (req, res) => {
                 const adminRegister = await admin.save();
     
                 if(adminRegister) {
+                    return res.status(500).json({message: "Regist Successful"});
+                } else {
+                    return res.status(422).json({error: "Regist Fail"});
+                } 
+            }
+        } catch(err) {
+            console.log(err);
+        }
+        }
+    });
+
+//super admin Register
+router.post('/registerSuperAdmin', async (req, res) => {
+    const { name, email, password, cpassword} = req.body;
+    
+        if (!name || !email || !password || !cpassword)
+        {
+            return res.status(422).json({error: "plz add info full"});
+        }
+        else{
+        try
+        {
+            const SuperAdminExist = await SuperAdmin.findOne({email:email});
+    
+            if(SuperAdminExist) {
+                return res.status(422).json({error: "Email already exists"});
+            } else if(password!==cpassword)
+            {
+                return res.status(422).json({error: "Passwords not matching"});
+            }
+            else {
+                const superAdmin = new SuperAdmin({name, email, password, cpassword});
+                
+                const SuperAdminRegister = await superAdmin.save();
+    
+                if(SuperAdminRegister) {
                     return res.status(500).json({message: "Regist Successful"});
                 } else {
                     return res.status(422).json({error: "Regist Fail"});
@@ -181,12 +219,61 @@ router.post('/signinAdmin', async (req, res)=> {
     }
 });
 
+//SuperAdminlogin 
+router.post('/signinSuperAdmin', async (req, res)=> {
+    try {
+        let token;
+        const { email, password } = req.body;
+
+        if(!email || !password)
+        {
+            return res.status(400).json({ error: "Plz fill the data" })
+        }
+
+        const SuperAdminLogin = await SuperAdmin.findOne({ email:email });
+
+        if(SuperAdminLogin)
+        {
+            var isMatch = (password==SuperAdminLogin.password);
+        }
+
+        if(SuperAdminLogin)
+        {
+            token = await SuperAdminLogin.generateAuthToken();
+            console.log(token);
+            console.log("token")
+
+            res.cookie("jwtoken", token, {
+                expires:new Date(Date.now() + 25892000000),
+                httpOnly:true
+            });
+
+            if(!isMatch)
+            {
+                res.status(400).json({ error: "Invalid Credentials pass"});
+            }
+            else{
+                res.json({ message: "Sign in successful"});
+            }
+        }
+        else{
+            res.status(400).json({ error: "Invalid Credentials email"});
+        }
+    } catch(err) {
+        console.log(err);
+    }
+});
+
 router.get('/AdminHome', authenticateAdmin, (req, res) => {
     res.send(req.rootAdmin);
 });
 
 router.get('/UserHome', authenticate, (req, res)=>{
     res.send(req.rootUser);
+});
+
+router.get('/SuperAdminHome', authenticateSuperAdmin, (req, res)=>{
+    res.send(req.rootSuperAdmin);
 });
 
 //Get user data for daily activity page

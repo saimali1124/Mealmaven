@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { FaTrashAlt } from "react-icons/fa";
-import AdminNavbar from "./AdminNavbar";
+import SuperAdminNavbar from "./SuperAdminNavbar";
 import Footer from "./Footer";
 
 const ManageRecipe = () => {
@@ -114,7 +114,7 @@ const ManageRecipe = () => {
 
   return (
     <>
-    <AdminNavbar/>
+    <SuperAdminNavbar/>
     <div className="grey-page2">
 <div className="recipes-container">
   <h1 className="recipes-header" style={{ marginTop: '1.5rem',marginBottom: '2.5rem'}}>Manage Recipes</h1>

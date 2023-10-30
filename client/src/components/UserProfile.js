@@ -25,7 +25,7 @@ const UserProfile = () => {
   return (
     <>
     <UserNavbar/>
-    <div className='grey-page'>
+    <div className='home-page'>
     <div className='container'>
     
   <div className='left-section'>

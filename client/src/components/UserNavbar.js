@@ -85,6 +85,9 @@ const UserNavbar = () => {
                 }
               </li> */}
               <li className="nav-item">
+                <NavLink className="nav-link" to="/UserProfile">Profile</NavLink>
+              </li>
+              <li className="nav-item">
                 <NavLink className="nav-link" to="/UserLogin">Log Out</NavLink>
               </li>
             </ul>

@@ -74,6 +74,16 @@
   margin-bottom: 180px;
 }
 
+.profile-form {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 35px;
+  text-align: center;
+  width: 320px;
+  margin-bottom: 3rem;
+}
+
 .form-title {
   color: #070707;
   font-size: 24px;
@@ -474,6 +484,23 @@ button[type='submitDiet'] {
 }
 
 button[type='submitDiet']:hover {
+  background-color: #0069d9;
+}
+
+button[type='updateProfile'] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  margin-top: 60px;
+  margin-left: -130px;
+  width: 70%;
+  cursor: pointer;
+}
+
+button[type='updateProfile']:hover {
   background-color: #0069d9;
 }
 

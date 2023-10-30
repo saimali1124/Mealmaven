@@ -25,6 +25,7 @@ import SuperAdminSignup from './components/SuperAdminSignup';
 import SuperAdminLogin from './components/SuperAdminLogin';
 import SuperAdminHome from './components/SuperAdminHome';
 import Dashboard from './components/Dashboard'
+import UserProfile from './components/UserProfile'
 
 const App = () => {
   return (
@@ -54,6 +55,7 @@ const App = () => {
         <Route path="/SuperAdminLogin" element={<SuperAdminLogin/>}/>
         <Route path="/SuperAdminHome" element={<SuperAdminHome/>}/>
         <Route path="/Dashboard" element={<Dashboard/>}/>
+        <Route path="/UserProfile" element={<UserProfile/>}/>
     </Routes>
     </>
   )

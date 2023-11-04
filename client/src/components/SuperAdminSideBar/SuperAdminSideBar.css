@@ -1,0 +1,58 @@
+.menuContainer {
+  font-family: "Inter", sans-serif;
+  background-color: rgb(33, 37, 41);
+  color: white;
+  width: 225px;
+  padding: 15px 20px;
+  border-right: 2px solid #ddd;
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.menu {
+  .item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 35px;
+
+    .title {
+      font-size: 12px;
+      font-weight: 200;
+      color: #ddd;
+      text-transform: uppercase;
+
+      @media screen and (max-width: 1024px) {
+        display: none;
+      }
+    }
+
+    .listItem {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: #ddd;
+      }
+      &:visited {
+        background-color: #ddd !important;
+      }
+      .listItemTitle {
+        @media screen and (max-width: 1024px) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+.menuContainer .item .selected {
+  background-color: #ddd;
+}

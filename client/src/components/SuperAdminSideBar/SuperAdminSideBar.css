@@ -42,9 +42,6 @@ a {
       &:hover {
         background-color: #ddd;
       }
-      &:visited {
-        background-color: #ddd !important;
-      }
       .listItemTitle {
         @media screen and (max-width: 1024px) {
           display: none;

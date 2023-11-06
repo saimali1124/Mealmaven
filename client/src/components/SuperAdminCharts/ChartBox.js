@@ -24,7 +24,7 @@ const ChartBox = (props) => {
                 type="monotone"
                 dataKey={props.dataKey}
                 stroke={props.color}
-                strokeWidth={2}
+                strokeWidth={3}
                 dot={false}
               />
             </LineChart>

@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import "./App.css";
+
 import UserSignup from "./components/UserSignup";
 import UserLogin from "./components/UserLogin";
 import ErrorPage from "./components/ErrorPage";
@@ -25,57 +26,38 @@ import SuperAdminSignup from "./components/SuperAdminSignup";
 import SuperAdminLogin from "./components/SuperAdminLogin";
 import SuperAdminHome from "./components/SuperAdminHome";
 import Charts from "./components/SuperAdminCharts/Charts";
+import UserProfile from './components/UserProfile'
 
 const App = () => {
   return (
     <>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Home />
-            </>
-          }
-        />
-        <Route
-          path="/UserSignup"
-          element={
-            <>
-              <UserSignup />
-            </>
-          }
-        />
-        <Route
-          path="/UserLogin"
-          element={
-            <>
-              <UserLogin />
-            </>
-          }
-        />
-        <Route path="/UserHome" element={<UserHome />} />
-        <Route path="/DailyActivity" element={<DailyActivity />} />
-        <Route path="/SugarFreeRecipe" element={<SugarFreeRecipe />} />
-        <Route path="/CarbFreeRecipe" element={<CarbFreeRecipe />} />
-        <Route path="/ProteinRecipe" element={<ProteinRecipe />} />
-        <Route path="/StarchFreeRecipe" element={<StarchFreeRecipe />} />
-        <Route path="/DairyRecipe" element={<DairyRecipe />} />
-        <Route path="/ManageRecipe" element={<ManageRecipe />} />
-        <Route path="/ManageDiet" element={<ManageDiet />} />
-        <Route path="/AdminSignup" element={<AdminSignup />} />
-        <Route path="/AdminLogin" element={<AdminLogin />} />
-        <Route path="/AdminHome" element={<AdminHome />} />
-        <Route path="/UserDietPlan" element={<UserDietPlan />} />
-        <Route path="/AdminDietPlan" element={<AdminDietPlan />} />
-        <Route path="/CustomRecipe" element={<CustomRecipe />} />
-        <Route element={<ErrorPage />} />
-        <Route path="/Payment" element={<PaymentForm />} />
-        <Route path="/SuperAdminSignup" element={<SuperAdminSignup />} />
-        <Route path="/SuperAdminLogin" element={<SuperAdminLogin />} />
-        <Route path="/SuperAdminHome" element={<SuperAdminHome />} />
+    <Routes>
+        <Route path="/" element={<><Home/></>}/>
+        <Route path="/UserSignup" element={<><UserSignup/></>}/>
+        <Route path="/UserLogin" element={<><UserLogin/></>}/>
+        <Route path="/UserHome" element={<UserHome/>}/>
+        <Route path="/DailyActivity" element={<DailyActivity/>}/>
+        <Route path="/SugarFreeRecipe" element={<SugarFreeRecipe/>}/>
+        <Route path="/CarbFreeRecipe" element={<CarbFreeRecipe/>}/>
+        <Route path="/ProteinRecipe" element={<ProteinRecipe/>}/>
+        <Route path="/StarchFreeRecipe" element={<StarchFreeRecipe/>}/>
+        <Route path="/DairyRecipe" element={<DairyRecipe/>}/>
+        <Route path="/ManageRecipe" element={<ManageRecipe/>}/>
+        <Route path="/ManageDiet" element={<ManageDiet/>}/>
+        <Route path="/AdminSignup" element={<AdminSignup/>}/>
+        <Route path="/AdminLogin" element={<AdminLogin/>}/>
+        <Route path="/AdminHome" element={<AdminHome/>}/>
+        <Route path="/UserDietPlan" element={<UserDietPlan/>}/>
+        <Route path="/AdminDietPlan" element={<AdminDietPlan/>}/>
+        <Route path="/CustomRecipe" element={<CustomRecipe/>}/>
+        <Route element={<ErrorPage/>}/>
+        <Route path='/Payment' element={<PaymentForm/>}/>
+        <Route path="/SuperAdminSignup" element={<SuperAdminSignup/>}/>
+        <Route path="/SuperAdminLogin" element={<SuperAdminLogin/>}/>
+        <Route path="/SuperAdminHome" element={<SuperAdminHome/>}/>
+        <Route path="/UserProfile" element={<UserProfile/>}/>
         <Route path="/Charts" element={<Charts />} />
-      </Routes>
+    </Routes>
     </>
   );
 };

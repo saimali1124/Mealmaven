@@ -90,7 +90,7 @@ const DailyActivity = () => {
               <div >
                 <textarea
                   id="big-textbox"
-                  placeholder='3000 cal'
+                  placeholder='Food Intake...'
                   name="foodIntake"
                   value={userData.foodIntake}
                   onChange={handleInputs}

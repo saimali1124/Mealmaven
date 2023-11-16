@@ -336,4 +336,76 @@ router.post('/Payment', async (req, res) => {
     }
   });
 
+//Update User Profile
+router.put('/updateProfileUser/:name', async (req, res) => {
+    const { oldname } = req.params;
+    const { name, email, phone } = req.body;
+  
+    const updatedFields = {};
+  
+    if (name) updatedFields.name = name;
+    if (email) updatedFields.email = email;
+    if (phone) updatedFields.phone = phone;
+  
+    try {
+      const user = await User.findOneAndUpdate(
+        { oldname },
+        updatedFields,
+        { new: true }
+      );
+      res.json(user);
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'error' });
+    }
+  });
+
+//Update Nutritionist Profile
+router.put('/updateProfileAdmin/:name', async (req, res) => {
+    const { oldname } = req.params;
+    const { name, email, phone } = req.body;
+  
+    const updatedFields = {};
+  
+    if (name) updatedFields.name = name;
+    if (email) updatedFields.email = email;
+    if (phone) updatedFields.phone = phone;
+  
+    try {
+      const user = await Admin.findOneAndUpdate(
+        { oldname },
+        updatedFields,
+        { new: true }
+      );
+      res.json(user);
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'error' });
+    }
+  });
+
+//Update Super Admin Profile
+router.put('/updateProfileSuperAdmin/:name', async (req, res) => {
+    const { oldname } = req.params;
+    const { name, email, phone } = req.body;
+  
+    const updatedFields = {};
+  
+    if (name) updatedFields.name = name;
+    if (email) updatedFields.email = email;
+    if (phone) updatedFields.phone = phone;
+  
+    try {
+      const user = await SuperAdmin.findOneAndUpdate(
+        { oldname },
+        updatedFields,
+        { new: true }
+      );
+      res.json(user);
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'error' });
+    }
+  });
+
 module.exports = router;

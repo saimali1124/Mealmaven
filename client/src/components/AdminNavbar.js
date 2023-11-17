@@ -29,6 +29,9 @@ const AdminNavbar = () => {
                 <NavLink className="nav-link" to="/AdminDietPlan">Assign Diet</NavLink>
               </li>
               <li className="nav-item">
+                <NavLink className="nav-link" to="/AdminProfile">Profile</NavLink>
+              </li>
+              <li className="nav-item">
                 <NavLink className="nav-link" to="/AdminLogin">Log Out</NavLink>
               </li>
             </ul>

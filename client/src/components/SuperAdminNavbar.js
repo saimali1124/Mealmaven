@@ -53,6 +53,11 @@ const SuperAdminNavbar = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
+                <NavLink className="nav-link" to="/SuperAdminProfile">
+                  Profile
+                </NavLink>
+              </li>
+              <li className="nav-item">
                 <NavLink className="nav-link" to="/SuperAdminLogin">
                   Log Out
                 </NavLink>

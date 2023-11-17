@@ -26,7 +26,9 @@ import SuperAdminSignup from "./components/SuperAdminSignup";
 import SuperAdminLogin from "./components/SuperAdminLogin";
 import SuperAdminHome from "./components/SuperAdminHome";
 import Charts from "./components/SuperAdminCharts/Charts";
-import UserProfile from './components/UserProfile'
+import UserProfile from './components/UserProfile';
+import AdminProfile from './components/AdminProfile';
+import SuperAdminProfile from './components/SuperAdminProfile'
 
 const App = () => {
   return (
@@ -56,6 +58,8 @@ const App = () => {
         <Route path="/SuperAdminLogin" element={<SuperAdminLogin/>}/>
         <Route path="/SuperAdminHome" element={<SuperAdminHome/>}/>
         <Route path="/UserProfile" element={<UserProfile/>}/>
+        <Route path="/AdminProfile" element={<AdminProfile/>}/>
+        <Route path="/SuperAdminProfile" element={<SuperAdminProfile/>}/>
         <Route path="/Charts" element={<Charts />} />
     </Routes>
     </>

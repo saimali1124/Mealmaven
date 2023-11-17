@@ -337,19 +337,19 @@ router.post('/Payment', async (req, res) => {
   });
 
 //Update User Profile
-router.put('/updateProfileUser/:name', async (req, res) => {
-    const { oldname } = req.params;
-    const { name, email, phone } = req.body;
+router.put('/updateProfileUser/:email', async (req, res) => {
+    const { email } = req.params;
+    const { name, phone } = req.body;
   
     const updatedFields = {};
   
     if (name) updatedFields.name = name;
-    if (email) updatedFields.email = email;
+    // if (email) updatedFields.email = email;
     if (phone) updatedFields.phone = phone;
   
     try {
       const user = await User.findOneAndUpdate(
-        { oldname },
+        { email },
         updatedFields,
         { new: true }
       );
@@ -361,23 +361,23 @@ router.put('/updateProfileUser/:name', async (req, res) => {
   });
 
 //Update Nutritionist Profile
-router.put('/updateProfileAdmin/:name', async (req, res) => {
-    const { oldname } = req.params;
-    const { name, email, phone } = req.body;
+router.put('/updateProfileAdmin/:email', async (req, res) => {
+    const { email } = req.params;
+    const { name, phone } = req.body;
   
     const updatedFields = {};
   
     if (name) updatedFields.name = name;
-    if (email) updatedFields.email = email;
+    // if (email) updatedFields.email = email;
     if (phone) updatedFields.phone = phone;
   
     try {
-      const user = await Admin.findOneAndUpdate(
-        { oldname },
+      const admin = await Admin.findOneAndUpdate(
+        { email },
         updatedFields,
         { new: true }
       );
-      res.json(user);
+      res.json(admin);
     } catch (err) {
       console.error(err);
       res.status(500).json({ error: 'error' });
@@ -385,23 +385,23 @@ router.put('/updateProfileAdmin/:name', async (req, res) => {
   });
 
 //Update Super Admin Profile
-router.put('/updateProfileSuperAdmin/:name', async (req, res) => {
-    const { oldname } = req.params;
-    const { name, email, phone } = req.body;
+router.put('/updateProfileSuperAdmin/:email', async (req, res) => {
+    const { email } = req.params;
+    const { name, phone } = req.body;
   
     const updatedFields = {};
   
     if (name) updatedFields.name = name;
-    if (email) updatedFields.email = email;
+    // if (email) updatedFields.email = email;
     if (phone) updatedFields.phone = phone;
   
     try {
-      const user = await SuperAdmin.findOneAndUpdate(
-        { oldname },
+      const superadmin = await SuperAdmin.findOneAndUpdate(
+        { email },
         updatedFields,
         { new: true }
       );
-      res.json(user);
+      res.json(superadmin);
     } catch (err) {
       console.error(err);
       res.status(500).json({ error: 'error' });

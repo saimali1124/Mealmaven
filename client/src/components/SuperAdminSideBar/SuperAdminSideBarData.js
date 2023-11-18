@@ -184,35 +184,35 @@ export const barChartBoxRevenue = {
 };
 export const columns = [
   { field: "id", headerName: "ID", width: 100 },
-  {
-    field: "img",
-    headerName: "Avatar",
-    width: 100,
-    sortable: false,
-    disableColumnMenu: true,
-    renderCell: (params) => {
-      return <img src={params.row.img || "/noavatar.png"} alt="" />;
-    },
-  },
+  // {
+  //   field: "img",
+  //   headerName: "Avatar",
+  //   width: 100,
+  //   sortable: false,
+  //   disableColumnMenu: true,
+  //   renderCell: (params) => {
+  //     return <img src={params.row.img || "/noavatar.png"} alt="" />;
+  //   },
+  // },
   {
     field: "name",
     headerName: "Name",
-    width: 150,
+    width: 250,
   },
   {
     field: "email",
     headerName: "Email",
-    width: 200,
+    width: 250,
   },
   {
     field: "phone",
     headerName: "Phone",
-    width: 200,
+    width: 250,
   },
   {
     field: "createdAt",
     headerName: "Created At",
-    width: 200,
+    width: 250,
   },
 ];
 export const userRows = [

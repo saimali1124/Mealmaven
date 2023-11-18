@@ -33,7 +33,7 @@ const DataTable = (props) => {
           "& .MuiDataGrid-toolbarContainer": {
             backgroundColor: "lightgray",
             borderRadius: "10px",
-            height: "80px",
+            height: "60px",
 
             flexWrap: "nowrap",
 

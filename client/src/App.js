@@ -33,10 +33,10 @@ import FitnessBlogs from "./components/FitnessBlogs";
 import FoodBlogs from "./components/FoodBlogs";
 import BlogInputForm from "./components/BlogInputForm";
 import Charts from "./components/SuperAdminCharts/Charts";
-import Users from "./components/SuperAdminUsers/Users";
-import Nutrionists from "./components/SuperAdminUsers/Nutrionists";
 import AdminProfile from "./components/AdminProfile";
 import SuperAdminProfile from "./components/SuperAdminProfile";
+import Users from "./components/SuperAdminUsers/Users";
+import Nutrionists from "./components/SuperAdminUsers/Nutrionists";
 
 const App = () => {
   return (

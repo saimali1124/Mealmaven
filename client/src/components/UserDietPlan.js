@@ -48,6 +48,12 @@ const UserDietPlan = () => {
       return;
     }
     try {
+      // setFormData(prevState => ({
+      //   ...prevState,
+      //   email: userEmail
+      // }));
+      // console.log("form", formData, userEmail);
+
       const res = await axios.post('/requestdiet', formData);
 
       if (!res) {

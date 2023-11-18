@@ -149,7 +149,7 @@ router.post('/requestdiet', async (req, res) => {
     if (existingRequest) {
       return res.status(400).send('Email already exists');
     }
-
+    
     const newRequestDietPlan = new RequestDietPlan({
       email: req.body.email,
       height: req.body.height,

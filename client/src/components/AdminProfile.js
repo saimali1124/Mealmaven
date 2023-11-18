@@ -9,6 +9,12 @@ const AdminProfile = () => {
     phone: ''
   });
 
+  const [showData, setShowData] = useState({
+    email: '',
+    name: '',
+    phone: ''
+  });
+
   useEffect(() => {
     const fetchUserData = async () => {
       try {
@@ -19,6 +25,11 @@ const AdminProfile = () => {
             email: adminData.email,
             name: adminData.name,
             phone: adminData.phone,
+          });
+          setShowData({
+            email: adminData.email,
+            name: adminData.name,
+            phone: adminData.phone
           });
           console.log(formData);
         } else {
@@ -76,9 +87,9 @@ const AdminProfile = () => {
 
         <div className='profile-main-section'>
           <div>
-            <h5>Name: {formData.name}</h5>
+            <h5>Name: {showData.name}</h5>
             <br />
-            <h5>Phone: {formData.phone}</h5>
+            <h5>Phone: {showData.phone}</h5>
           </div>
 
           <h2>Update Profile</h2>

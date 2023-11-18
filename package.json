@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "parallax": "^0.0.0"
+  },
+  "devDependencies": {
+    "svg-url-loader": "^8.0.0"
   }
 }

@@ -10,6 +10,9 @@ const superadminschema = new mongoose.Schema({
         type: String,
         required: true
     },
+    phone: {
+        type: Number
+    },
     password: {
         type: String,
         required: true

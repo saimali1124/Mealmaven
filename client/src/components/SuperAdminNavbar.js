@@ -1,37 +1,72 @@
-import React from 'react'
-import 'bootstrap/dist/css/bootstrap.css';
-import { NavLink } from 'react-router-dom';
-import m from '../images/m.png';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.css";
+import { NavLink } from "react-router-dom";
+import m from "../images/m.png";
 
 const SuperAdminNavbar = () => {
-  return (<>
-<nav className="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark">
+  return (
+    <>
+      <nav className="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark">
         <div className="container-fluid">
-          <NavLink className="navbar-brand" to="#" style={{ fontFamily: "Courier New", fontSize: "24px"}}>
-            <img src={m} alt="MealMaven Logo" style={{width: "50px", marginRight: "10px"}} />
+          <NavLink
+            className="navbar-brand"
+            to="#"
+            style={{ fontFamily: "Courier New", fontSize: "24px" }}
+          >
+            <img
+              src={m}
+              alt="MealMaven Logo"
+              style={{ width: "50px", marginRight: "10px" }}
+            />
             MealMaven
           </NavLink>
-          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <NavLink className="nav-link active" aria-current="page" to="/SuperAdminHome">Home</NavLink>
+                <NavLink
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/SuperAdminHome"
+                >
+                  Home
+                </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/Dashboard">Dashboard</NavLink>
+                <NavLink className="nav-link" to="/Charts">
+                  Dashboard
+                </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/ManageRecipe">Manage Recipe</NavLink>
+                <NavLink className="nav-link" to="/ManageRecipe">
+                  Manage Recipe
+                </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/SuperAdminLogin">Log Out</NavLink>
+                <NavLink className="nav-link" to="/SuperAdminProfile">
+                  Profile
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/SuperAdminLogin">
+                  Log Out
+                </NavLink>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-    </>)
-}
-export default SuperAdminNavbar
+    </>
+  );
+};
+export default SuperAdminNavbar;

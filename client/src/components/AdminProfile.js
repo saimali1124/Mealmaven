@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import UserNavbar from './UserNavbar';
+import AdminNavbar from './AdminNavbar';
 import Footer from './Footer';
 
-const UserProfile = () => {
+const AdminProfile = () => {
   const [formData, setFormData] = useState({
     email: '',
     name: '',
@@ -12,14 +12,15 @@ const UserProfile = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await fetch('/UserHome');
+        const response = await fetch('/AdminHome');
         if (response.ok) {
-          const userData = await response.json();
+          const adminData = await response.json();
           setFormData({
-            email: userData.email,
-            name: userData.name,
-            phone: userData.phone,
+            email: adminData.email,
+            name: adminData.name,
+            phone: adminData.phone,
           });
+          console.log(formData);
         } else {
           console.error('Failed to fetch user data');
         }
@@ -43,12 +44,13 @@ const UserProfile = () => {
     e.preventDefault();
 
     const { email, name, phone } = formData;
-    if (phone.length<10 || phone.length>13) {
+    if (!phone || phone.length<10 || phone.length>13) {
       window.alert('Invalid Phone Number Length!');
       return;
     }
+    console.log("Update: ", email, name, phone);
 
-    const res = await fetch(`/updateProfileUser/${email}`, {
+    const res = await fetch(`/updateProfileAdmin/${email}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -68,7 +70,7 @@ const UserProfile = () => {
 
   return (
     <>
-      <UserNavbar />
+      <AdminNavbar />
       <div className='home-page'>
         <h1 id='manageProfile_H1'>Manage Profile</h1>
 
@@ -111,4 +113,4 @@ const UserProfile = () => {
   );
 };
 
-export default UserProfile;
+export default AdminProfile;

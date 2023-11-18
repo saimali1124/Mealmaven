@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import "./App.css";
+import "./blogs.css"
 import UserSignup from './components/UserSignup';
 import UserLogin from './components/UserLogin';
 import ErrorPage from './components/ErrorPage';
@@ -26,6 +27,12 @@ import SuperAdminLogin from './components/SuperAdminLogin';
 import SuperAdminHome from './components/SuperAdminHome';
 import Dashboard from './components/Dashboard'
 import UserProfile from './components/UserProfile'
+import Blogs from './components/Blogs';
+import Article from './components/Article'; 
+import LifeStyleBlogs from './components/LifeStyleBlogs';
+import FitnessBlogs from './components/FitnessBlogs';
+import FoodBlogs from './components/FoodBlogs';
+import BlogInputForm from './components/BlogInputForm';
 
 const App = () => {
   return (
@@ -56,6 +63,17 @@ const App = () => {
         <Route path="/SuperAdminHome" element={<SuperAdminHome/>}/>
         <Route path="/Dashboard" element={<Dashboard/>}/>
         <Route path="/UserProfile" element={<UserProfile/>}/>
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/article/:id" element={<Article />} />
+        <Route path="/blogscategory/lifestyle" element={<LifeStyleBlogs />} />
+        <Route path="/blogscategory/fitness" element={<FitnessBlogs />} />
+        <Route path="/blogscategory/food" element={<FoodBlogs />} />
+        <Route path="/BlogInput" element={<BlogInputForm />} />
+
+
+
+
+
     </Routes>
     </>
   )

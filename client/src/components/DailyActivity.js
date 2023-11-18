@@ -81,7 +81,7 @@ const DailyActivity = () => {
   return (
     <>
       <UserNavbar />
-      <div>
+      <div className='grey-page'>
         <div className='recipes-container'>
           <h1 className='recipes-header' style={{ marginTop: '1.5rem', marginBottom: '2.5rem' }} >Your Daily Activities</h1>
 

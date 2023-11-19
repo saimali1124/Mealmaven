@@ -69,6 +69,7 @@ const AdminDietPlan = () => {
               .filter((request) => !request.complete)
               .map((request) => (
                 <li key={request._id} className="recipe">
+                  {console.log(request.email.length)}
                   <h2 className="recipe-name"><strong style={{ marginRight: '1rem' }}>User:</strong>{request.email}</h2>
                   <p className="recipe-ingredients">
                     <strong>Age:</strong> {request.age}

@@ -15,9 +15,8 @@ const SideBar = () => {
             {item.listItems.map((listItem) => (
               <NavLink
                 to={listItem.url}
-                className={`listItem ${
-                  location.pathname === listItem.url ? "selected" : ""
-                }`}
+                className={`listItem ${location.pathname === listItem.url ? "selected" : ""
+                  }`}
                 key={listItem.id}
               >
                 <img src={Object.values(listItem.icon)[0]} alt="" />

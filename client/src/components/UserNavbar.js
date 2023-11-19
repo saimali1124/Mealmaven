@@ -1,6 +1,6 @@
-// import React, { useEffect, useState } from 'react'
-// import { useNavigate } from "react-router-dom"
-import { React, useState } from "react";
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from "react-router-dom"
+// import { React, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { NavLink } from "react-router-dom";
 import m from "../images/m.png";
@@ -17,39 +17,39 @@ const UserNavbar = () => {
     cursor: "pointer",
     color: "white",
   };
-  // const history = useNavigate();
-  // const [userData, setUserData] = useState({});
+  const history = useNavigate();
+  const [userData, setUserData] = useState({});
 
-  // const callUserHome = async () => {
-  //   try{
-  //     const res = await fetch('/UserHome', {
-  //       method:'GET',
-  //       headers: {
-  //         Accept: "Application/json",
-  //         "Content-Type": "Application/json"
-  //       },
-  //       credentials: "include"
-  //     });
+  const callUserHome = async () => {
+    try{
+      const res = await fetch('/UserHome', {
+        method:'GET',
+        headers: {
+          Accept: "Application/json",
+          "Content-Type": "Application/json"
+        },
+        credentials: "include"
+      });
 
-  //     const data = await res.json();
-  //     console.log(data);
-  //     setUserData(data);
+      const data = await res.json();
+      console.log(data);
+      setUserData(data);
 
-  //     if(!res.status===200)
-  //     {
-  //       const error= new Error(res.error);
-  //       throw error;
-  //     }
+      if(!res.status===200)
+      {
+        const error= new Error(res.error);
+        throw error;
+      }
 
-  //   } catch(err) {
-  //     console.log(err);
-  //     history("/UserLogin");
-  //   }
-  // }
+    } catch(err) {
+      console.log(err);
+      history("/UserLogin");
+    }
+  }
 
-  // useEffect(()=> {
-  //   callUserHome();
-  // });
+  useEffect(()=> {
+    callUserHome();
+  });
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -167,7 +167,7 @@ const UserNavbar = () => {
                   Daily Activity
                 </NavLink>
               </li>
-              {/* <li className="nav-item">
+              <li className="nav-item">
                 {
                     userData.hasPremiumAccess ? (
                     <NavLink className="nav-link" to="/CustomRecipe">Premium</NavLink>
@@ -175,7 +175,7 @@ const UserNavbar = () => {
                     <NavLink className="nav-link" to="/Payment">Premium</NavLink>
                   )
                 }
-              </li> */}
+              </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/UserProfile">
                   Profile

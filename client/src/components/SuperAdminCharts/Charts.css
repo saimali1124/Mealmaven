@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
 }
+
 .chart {
   width: 100%;
   margin: 10px;
@@ -19,9 +20,11 @@
   @media screen and (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
   }
+
   @media screen and (max-width: 768px) {
     grid-template-columns: repeat(1, 1fr);
   }
+
   @media screen and (max-width: 480px) {
     grid-auto-rows: minmax(120px, auto);
   }

@@ -60,6 +60,9 @@ const UserNavbar = () => {
               <li className="nav-item">
                 <NavLink className="nav-link" to="/UserDietPlan">Diet Plan</NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/Blogs">Blogs</NavLink>
+              </li>
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href='/UserHome' id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Recipes
@@ -84,6 +87,9 @@ const UserNavbar = () => {
                   )
                 }
               </li> */}
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/UserProfile">Profile</NavLink>
+              </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/UserLogin">Log Out</NavLink>
               </li>

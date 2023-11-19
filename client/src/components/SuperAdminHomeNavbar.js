@@ -17,12 +17,12 @@ const SuperAdminHomeNavbar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto">
-              <li className="nav-item" style={{marginRight: '1rem'}}>
+              {/* <li className="nav-item" style={{marginRight: '1rem'}}>
                 <NavLink className="nav-link" to="/SuperAdminSignup">Sign Up</NavLink>
-              </li>
-              <li className="nav-item login-link">
+              </li> */}
+              {/* <li className="nav-item login-link">
                 <NavLink className="nav-link" to="/SuperAdminLogin">Login</NavLink>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

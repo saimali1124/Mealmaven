@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import "../App.css";
 import SuperAdminHomeNavbar from './SuperAdminHomeNavbar';
 import Footer from './Footer';
@@ -97,9 +97,9 @@ const SuperAdminLogin= () => {
                     />
                   </div>
                   <br></br>
-                  <p style={{marginBottom: '-0.8rem'}}>New to MealMaven?
+                  {/* <p style={{marginBottom: '-0.8rem'}}>New to MealMaven?
                   <NavLink to="/SuperAdminSignup" className="signup-image-link">Join now</NavLink>
-                  </p>
+                  </p> */}
                 </form>
               </div>
             </div>

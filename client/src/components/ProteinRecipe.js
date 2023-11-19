@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import UserNavbar from "./UserNavbar";
@@ -9,58 +10,94 @@ const ProteinRecipe = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-        try{
-      const result = await axios.get("/recipes3?type=protein");
-      setRecipes(result.data);
-        } catch (err)
-        {
-            console.log(err);
-        }
+      try {
+        let result = await axios.get("/recipes3?type=protein");
+        let t = result.data;
+        t = t.map((obj) => {
+          obj.isExpanded = false
+          return obj
+        })
+        setRecipes(t);
+      } catch (err) {
+        console.log(err);
+      }
     };
 
     fetchData();
   }, []);
 
+  const toggleRecipe = (index) => {
+    setRecipes((prevRecipes) => {
+
+      return prevRecipes.map((recipe, i) => {
+        if (i === index) {
+          return { ...recipe, isExpanded: !recipe.isExpanded };
+        } else {
+          return recipe;
+        }
+      });
+    });
+
+  }
+
+
+
   return (
     <>
-      <UserNavbar/>
-      <div className="grey-page">
-      <div className="recipe-container">
-        <div className="recipes">
-          <h1 className="recipes-header">Protein Recipes</h1>
-          <ul className="recipes-list">
-            {recipes.map((recipe) => (
-              <li key={recipe._id} className="recipe">
-                <h2 className="recipe-name">{recipe.name}</h2>
-                <p className="recipe-ingredients">
-                  <strong>Ingredients:</strong> {recipe.ingredients}
-                </p>
-                <p className="recipe-instructions">
-                  <strong>Instructions:</strong> {recipe.instructions}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <UserNavbar />
+      <div id="recipe-parent">
         <div className="food-info">
-        <h2 className="food-text2">About:</h2>
           <img
             className="food-image"
             src={food}
             alt="Sugar-free food"
           />
-          <h4 className="food-text">
-          Proteins are essential macronutrients that play a crucial role in building, repairing, and maintaining tissues in the human body
-          <br></br>
-              <br></br>
+
+          <div>
+
+            <h2 className="food-text2">About</h2>
+            <p className="food-text">
+              Proteins are essential macronutrients that play a crucial role in building, repairing, and maintaining tissues in the human body
               Protein dishes are meals that contain a significant amount of protein, either from animal sources such as meat, poultry, and fish.
-          </h4>
+            </p>
+          </div>
+
         </div>
+
+
+        <div className="recipes">
+          <h1 className="recipes-header">Starch Free Recipes</h1>
+          <ul className="recipes-list">
+            {recipes.map((recipe, i) => (
+              <div>
+
+                <li key={recipe._id} className="recipe" onClick={() => toggleRecipe(i)}>
+                  <h2 className="recipe-name">{recipe.name}</h2>
+                </li>
+
+                {recipe.isExpanded && (
+
+                  <div id="recipe-details">
+                    <p className="recipe-ingredients">
+                      <strong>Ingredients:</strong> <br />{recipe.ingredients}
+                    </p>
+                    <br />
+                    <p className="recipe-instructions">
+                      <strong>Instructions:</strong> <br />{recipe.instructions}
+                    </p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </ul>
+        </div>
+
+
       </div>
-      </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
 
 export default ProteinRecipe;
+

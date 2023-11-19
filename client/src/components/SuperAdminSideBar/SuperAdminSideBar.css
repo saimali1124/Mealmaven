@@ -2,7 +2,7 @@
   font-family: "Inter", sans-serif;
   background-color: rgb(33, 37, 41);
   color: white;
-  width: 225px;
+  width: 250px;
   padding: 15px 20px;
   border-right: 2px solid #ddd;
 
@@ -10,10 +10,12 @@
     display: none;
   }
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
+
 .menu {
   .item {
     display: flex;
@@ -41,7 +43,12 @@ a {
 
       &:hover {
         background-color: #ddd;
+
+
       }
+
+
+
       .listItemTitle {
         @media screen and (max-width: 1024px) {
           display: none;
@@ -50,6 +57,7 @@ a {
     }
   }
 }
+
 .menuContainer .item .selected {
   background-color: #ddd;
 }

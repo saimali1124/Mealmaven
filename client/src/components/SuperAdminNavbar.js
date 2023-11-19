@@ -16,7 +16,7 @@ const SuperAdminNavbar = () => {
             <img
               src={m}
               alt="MealMaven Logo"
-              style={{ width: "50px", marginRight: "10px" }}
+              style={{ width: "40px", marginRight: "10px" }}
             />
             MealMaven
           </NavLink>

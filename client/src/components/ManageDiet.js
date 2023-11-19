@@ -154,7 +154,7 @@ const ManageDiet = () => {
 
                 <label htmlFor="name-textbox">
                   Name
-                  <input type="text" placeholder='Name' name="John Smith" value={dietData.name} onChange={handleInputs} />
+                  <input type="text" placeholder='John Smith' name="name" value={dietData.name} onChange={handleInputs} />
                 </label>
 
                 <label htmlFor="type-dropdown">

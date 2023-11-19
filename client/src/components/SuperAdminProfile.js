@@ -55,7 +55,7 @@ const SuperAdminProfile = () => {
     e.preventDefault();
 
     const { email, name, phone } = formData;
-    if (!phone || phone.length<10 || phone.length>13) {
+    if (!phone || phone.length < 10 || phone.length > 13) {
       window.alert('Invalid Phone Number Length!');
       return;
     }
@@ -77,7 +77,7 @@ const SuperAdminProfile = () => {
       alert("Profile Edited!");
     }
   };
-  
+
 
   return (
     <>

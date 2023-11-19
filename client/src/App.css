@@ -75,13 +75,12 @@
   margin-bottom: 180px;
 }
 
-
 .form-title {
   color: #070707;
   font-size: 24px;
   margin-bottom: 30px;
   font-weight: bold;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .form-input {
@@ -102,7 +101,7 @@
 }
 
 .button-primary {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: #fff;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -147,8 +146,6 @@
   padding-top: 20px;
 }
 
-
-
 .login-image-link:hover {
   text-decoration: underline;
 }
@@ -159,18 +156,24 @@
 }
 
 .home-page {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('https://images.unsplash.com/photo-1556911220-bff31c812dba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3MzkxNTEyNQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080');
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7)
+    ),
+    url("https://images.unsplash.com/photo-1556911220-bff31c812dba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3MzkxNTEyNQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   /* height: 100vh; */
   overflow: hidden;
-
 }
 
-
 .grey-page {
-  background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
+  background: radial-gradient(
+    circle at 18.7% 37.8%,
+    rgb(250, 250, 250) 0%,
+    rgb(225, 234, 238) 90%
+  );
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -178,9 +181,12 @@
   height: 100%;
 }
 
-
 .grey-page3 {
-  background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
+  background: radial-gradient(
+    circle at 18.7% 37.8%,
+    rgb(250, 250, 250) 0%,
+    rgb(225, 234, 238) 90%
+  );
   background-size: cover;
   background-position: center center;
   height: 100%;
@@ -251,7 +257,6 @@
   width: 100%;
   margin-top: 30px;
   margin-bottom: 20px;
-
 }
 
 #activityForm button:hover {
@@ -270,8 +275,6 @@
   background-color: rgb(255, 255, 255);
   padding: 20px;
   margin-bottom: 5px;
-
-
 }
 
 #recipe-details {
@@ -325,7 +328,6 @@ button {
   display: flex;
   align-items: center;
   width: 80px;
-
 }
 
 .dietRow {
@@ -334,7 +336,6 @@ button {
 }
 
 .recipe-action-btn {
-
   background-color: transparent;
   padding: 0;
   cursor: pointer;
@@ -362,7 +363,7 @@ button {
   margin-top: 20px;
 }
 
-.profile-main-section div>h5,
+.profile-main-section div > h5,
 .assign-diet h2,
 .assign-diet p {
   text-overflow: ellipsis;
@@ -370,12 +371,12 @@ button {
   overflow: hidden;
 }
 
-.profile-main-section>h2 {
+.profile-main-section > h2 {
   text-align: center;
   margin-top: 100px;
 }
 
-.profile-main-section>form,
+.profile-main-section > form,
 .login-form2 {
   margin-top: 30px;
   margin-bottom: 10px;
@@ -395,12 +396,12 @@ button {
   margin-top: 20px;
 }
 
-.profile-main-section>form input {
+.profile-main-section > form input {
   padding: 10px 10px;
 }
 
-.login-form2>input,
-.login-form2>textarea {
+.login-form2 > input,
+.login-form2 > textarea {
   padding: 7px;
 }
 
@@ -410,11 +411,9 @@ button {
   width: 100%;
 }
 
-.profile-main-section>form button {
+.profile-main-section > form button {
   margin-top: 30px;
 }
-
-
 
 /* .profile-form {
   background-color: #fff;
@@ -438,7 +437,6 @@ button {
   margin-top: 100px;
 }
 
-
 .recipes-list {
   list-style: none;
   padding: 50px;
@@ -459,7 +457,11 @@ button {
   padding: 20px;
   padding-top: 5vw;
   /* padding-top: 3vw; */
-  background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
+  background: radial-gradient(
+    circle at 18.7% 37.8%,
+    rgb(250, 250, 250) 0%,
+    rgb(225, 234, 238) 90%
+  );
   background-size: cover;
   background-position: center;
 }
@@ -470,13 +472,11 @@ button {
   /* background-color: #007bff; */
 }
 
-.food-info>div {
+.food-info > div {
   width: 40%;
   /* background-color: #007bff; */
   margin: auto;
-
 }
-
 
 .food-image {
   width: 50%;
@@ -490,20 +490,20 @@ button {
   font-size: 18px;
   margin-top: 20px;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: bold;
   list-style-type: none;
 }
 
 .food-text2 {
   font-weight: bold;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   text-align: center;
   margin: 0;
 }
 
 .footer {
-  background: #152F4F;
+  background: #152f4f;
   color: white;
 }
 
@@ -513,12 +513,12 @@ button {
 
 .footer .links li a {
   color: white;
-  transition: color .2s;
+  transition: color 0.2s;
 }
 
 .footer .links li a:hover {
   text-decoration: none;
-  color: #4180CB;
+  color: #4180cb;
 }
 
 .footer .about-company i {
@@ -527,11 +527,11 @@ button {
 
 .footer .about-company a {
   color: white;
-  transition: color .2s;
+  transition: color 0.2s;
 }
 
 .footer .about-company a:hover {
-  color: #4180CB;
+  color: #4180cb;
 }
 
 .footer .location i {
@@ -539,7 +539,7 @@ button {
 }
 
 .footer .copyright p {
-  border-top: 1px solid rgba(255, 255, 255, .1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .c1,
@@ -566,14 +566,11 @@ c9 {
   width: 90%;
 }
 
-
-
-
-select option[value=''] {
+select option[value=""] {
   color: #ccc;
 }
 
-button[type='submitDiet'] {
+button[type="submitDiet"] {
   background-color: #007bff;
   color: #fff;
   padding: 10px;
@@ -586,11 +583,11 @@ button[type='submitDiet'] {
   cursor: pointer;
 }
 
-button[type='submitDiet']:hover {
+button[type="submitDiet"]:hover {
   background-color: #0069d9;
 }
 
-button[type='updateProfile'] {
+button[type="updateProfile"] {
   background-color: #007bff;
   color: #fff;
   padding: 10px;
@@ -600,7 +597,7 @@ button[type='updateProfile'] {
   margin: 0;
 }
 
-button[type='updateProfile']:hover {
+button[type="updateProfile"]:hover {
   background-color: #0069d9;
 }
 
@@ -638,7 +635,7 @@ button[type='updateProfile']:hover {
   white-space: normal;
   margin-right: -60vw;
   margin-top: 60px;
-  font-weight: 400
+  font-weight: 400;
 }
 
 .AbHead {
@@ -651,7 +648,6 @@ button[type='updateProfile']:hover {
 }
 
 .AboutUsText {
-
   width: 100%;
   max-width: 700px;
   display: block;
@@ -660,8 +656,9 @@ button[type='updateProfile']:hover {
   padding-left: 10px;
   padding-right: 10px;
   font-weight: bold;
-  text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+    2px 2px 0 black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 25px;
   color: #fcfbfb;
 }
@@ -710,7 +707,7 @@ h8 {
 
 .text-content {
   font-weight: bold;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin-left: 25px;
   text-align: left;
   color: white;
@@ -719,7 +716,7 @@ h8 {
   text-shadow: 5px 0px 5px rgb(0, 0, 5);
 }
 
-h1>br {
+h1 > br {
   display: none;
 }
 
@@ -730,7 +727,7 @@ h8 {
   display: block;
   color: white;
   font-size: 34px;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   text-shadow: 3px 0px 3px rgb(0, 0, 3);
 }
 
@@ -772,7 +769,6 @@ h9 {
   padding-left: 20px;
   padding-right: 20px;
   z-index: 1000;
-
 }
 
 #add-diet {
@@ -801,7 +797,6 @@ textarea {
   padding: 7px;
 }
 
-
 #add-diet h4 {
   text-align: center;
 }
@@ -820,17 +815,13 @@ textarea {
   background-color: #0664c9;
 }
 
-
 @media (max-width: 735px) {
-  h1>br {
+  h1 > br {
     display: block;
   }
-
-
 }
 
 @media (max-width: 500px) {
-
   .text-content,
   h8 {
     text-align: center;
@@ -844,12 +835,9 @@ textarea {
   h8 {
     font-size: 30px;
   }
-
 }
 
 @media (max-width: 560px) {
-
-
   .profile-main-section {
     max-width: 400px;
   }
@@ -857,12 +845,9 @@ textarea {
   .profile-main-section h3 {
     font-size: large;
   }
-
 }
 
 @media (max-width: 560px) {
-
-
   .profile-main-section {
     max-width: 300px;
   }
@@ -870,7 +855,6 @@ textarea {
   .profile-main-section h3 {
     font-size: large;
   }
-
 }
 
 @media (max-width: 910px) {
@@ -884,42 +868,33 @@ textarea {
     min-width: 700px;
     margin: auto;
     /* background-color: #152F4F;*/
-
   }
 
-  .food-info>div {
+  .food-info > div {
     margin-top: 50px;
     width: 100%;
     /* background-color: #007bff; */
-
   }
-
 
   .food-image {
     width: 100%;
     height: 500px;
   }
-
 }
-
 
 @media (max-width: 720px) {
   .food-info {
-
     max-width: 400px;
     min-width: 400px;
     margin: auto;
     /* background-color: #152F4F;*/
-
   }
 
-  .food-info>div {
+  .food-info > div {
     margin-top: 50px;
     width: 100%;
     /* background-color: #007bff; */
-
   }
-
 
   .food-image {
     width: 100%;
@@ -929,19 +904,16 @@ textarea {
 
 @media (max-width: 420px) {
   .food-info {
-
     max-width: 300px;
     min-width: 300px;
     margin: auto;
     /* background-color: #152F4F;*/
-
   }
 
-  .food-info>div {
+  .food-info > div {
     margin-top: 50px;
     width: 100%;
     /* background-color: #007bff; */
-
   }
 
   #recipe-details {
@@ -961,4 +933,64 @@ textarea {
     width: 100%;
     height: 250px;
   }
+}
+@media (max-width: 992px) {
+  .navbar-collapse {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    padding: 1rem;
+    background-color: black;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+  }
+
+  .navbar-collapse.show {
+    transform: translateX(0);
+  }
+}
+.nav-item {
+  position: relative;
+}
+
+.nav-item .nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #212529;
+  text-decoration: none;
+}
+
+.nav-item .nav-link:hover,
+.nav-item .nav-link:focus {
+  color: #007bff;
+  text-decoration: none;
+  background-color: #868788;
+}
+
+.nav-item .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  /* z-index: 1000; */
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+}
+
+.nav-item:hover .dropdown-menu {
+  display: block;
 }

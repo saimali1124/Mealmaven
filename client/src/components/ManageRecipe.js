@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { FaTrashAlt } from "react-icons/fa";
+import { FaTrashAlt, FaEdit } from "react-icons/fa";
 import SuperAdminNavbar from "./SuperAdminNavbar";
 import SuperAdminSideBar from "./SuperAdminSideBar/SuperAdminSideBar";
 import Footer from "./Footer";
 
 const ManageRecipe = () => {
+  const [displayAddRecipe, setDisplayAddRecipe] = useState(false)
+  const [displayEditRecipe, setDisplayEditRecipe] = useState(false)
   const [recipes, setRecipes] = useState([]);
   const [recipeData, setRecipeData] = useState({
     name: "",
@@ -19,7 +21,12 @@ const ManageRecipe = () => {
     const fetchData = async () => {
       try {
         const result = await axios.get("/recipes6");
-        setRecipes(result.data);
+        let t = result.data;
+        t = t.map((obj) => {
+          obj.isExpanded = false
+          return obj
+        })
+        setRecipes(t);
         setEditRecipeData(result.data);
       } catch (err) {
         console.log(err);
@@ -79,6 +86,8 @@ const ManageRecipe = () => {
     if (!data) {
       alert("Recipe not added");
     } else {
+      setDisplayAddRecipe(false)
+      setRecipeData({})
       alert("Recipe Added!");
       setRecipeData({
         ...recipeData,
@@ -94,7 +103,7 @@ const ManageRecipe = () => {
     e.preventDefault();
 
     const { name, type, ingredients, instructions } = editRecipeData;
-
+    console.log(editRecipeData)
     if (!name) {
       window.alert("Please enter name of the recipe!");
       return;
@@ -113,257 +122,217 @@ const ManageRecipe = () => {
     if (!data) {
       alert("Recipe not edited");
     } else {
+      setDisplayEditRecipe(false)
       alert("Recipe Edited!");
       setEditRecipeData([]);
     }
   };
+
+
+  const toggleRecipe = (index) => {
+    setRecipes((prevRecipes) => {
+
+      return prevRecipes.map((recipe, i) => {
+        if (i === index) {
+          return { ...recipe, isExpanded: !recipe.isExpanded };
+        } else {
+          return recipe;
+        }
+      });
+    });
+
+  }
+
+  const onEditRecipeClick = (index) => {
+    setEditRecipeData(recipes[index])
+    setDisplayEditRecipe(true)
+  }
 
   return (
     <>
       <SuperAdminNavbar />
       <div className="container-box">
         <SuperAdminSideBar />
-        <div className="grey-page2" style={{ width: "100%" }}>
-          <div className="recipes-container">
-            <h1
-              className="recipes-header"
-              style={{ marginTop: "1.5rem", marginBottom: "2.5rem" }}
-            >
-              Manage Recipes
-            </h1>
-            <ul className="recipes-list">
-              {recipes.map((recipe) => (
-                <li key={recipe._id} className="recipe">
-                  <h2 className="recipe-name">{recipe.name}</h2>
-                  <p className="recipe-type">
-                    <strong>Type:</strong> {recipe.type}
-                  </p>
-                  <p className="recipe-ingredients">
-                    <strong>Ingredients:</strong> {recipe.ingredients}
-                  </p>
-                  <p className="recipe-instructions">
-                    <strong>Instructions:</strong> {recipe.instructions}
-                  </p>
-                  <div className="recipe-actions">
-                    <button
-                      className="recipe-action-btn"
-                      onClick={() => handleDeleteRecipe(recipe._id)}
+
+
+        <div className='grey-page'>
+
+          {displayAddRecipe &&
+            <div className="modal-overlay" onClick={() => { setDisplayAddRecipe(false); setRecipeData({}) }}>
+              <div id="add-diet" onClick={(event) => event.stopPropagation()}>
+
+                <h4 >Add Recipe</h4>
+                <form method="POST" id="activityForm">
+
+                  <label htmlFor="name-textbox">
+                    Recipe Name
+                    <input type="text" placeholder='Pizza' name="name" value={recipeData.name} onChange={handleInputs} />
+                  </label>
+
+                  <label htmlFor="type-dropdown">
+                    Recipe Type
+                    <select
+                      name="type"
+                      onChange={handleInputs}
+                      value={recipeData.type}
                     >
-                      <FaTrashAlt />
-                    </button>
+                      <option value="">Choose Type</option>
+                      <option value="sugar free">Sugar Free</option>
+                      <option value="carb free">Carb Free</option>
+                      <option value="protein">Protein</option>
+                      <option value="dairy">Dairy</option>
+                      <option value="starch free">Starch Free</option>
+                    </select>
+                  </label>
+
+                  <label htmlFor="Inst-textbox">
+                    Ingredients
+                    <textarea
+                      placeholder="Ingredients"
+                      name="ingredients"
+                      value={recipeData.ingredients}
+                      onChange={handleInputs}
+                    />
+                  </label>
+
+                  <label htmlFor="Inst-textbox">
+                    Instructions
+                    <textarea
+                      placeholder="Instructions"
+                      name="instructions"
+                      value={recipeData.instructions}
+                      onChange={handleInputs}
+                    />
+                  </label>
+
+                  <button
+
+                    type="submit"
+                    onClick={ManageRecipeForm}
+                  >
+                    Add
+                  </button>
+                </form>
+
+              </div>
+
+            </div>
+          }
+
+          <div className="recipes-container">
+
+            <h1 className="recipes-header" style={{ marginTop: '1.5rem', marginBottom: '2.5rem' }}>Manage Recipes</h1>
+
+            <button id="add-diet-button" onClick={() => setDisplayAddRecipe(true)}> Add Recipe </button>
+
+            <ul className="recipes-list">
+              {
+                recipes.map((recipe, i) => (
+
+                  <div>
+
+                    <li key={recipe._id} className="recipe dietRow" onClick={() => toggleRecipe(i)}>
+                      <h2 className="recipe-name" >{recipe.name}</h2>
+
+                      <div className="recipe-actions" onClick={(event) => event.stopPropagation()}>
+                        <button className="recipe-action-btn" onClick={() => handleDeleteRecipe(recipe._id)}>
+                          <FaTrashAlt />
+                        </button>
+                        <button className="recipe-action-btn" onClick={() => onEditRecipeClick(i)}>
+                          <FaEdit />
+                        </button>
+                      </div>
+
+                    </li>
+
+
+
+                    {recipe.isExpanded && (
+
+                      <div id="recipe-details">
+                        <p className="recipe-type">
+                          <strong>Type:</strong> <br />{recipe.type}
+                        </p>
+                        <p className="recipe-duration">
+                          <strong>Ingredients:</strong><br /> {recipe.ingredients}
+                        </p>
+                        <p className="recipe-details">
+                          <strong>Instructions:</strong> <br />{recipe.instructions}
+                        </p>
+                      </div>
+                    )}
                   </div>
-                </li>
-              ))}
+
+                ))}
             </ul>
           </div>
-          <div
-            style={{
-              position: "absolute",
-              bottom: "-5rem",
-              padding: "2rem",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              marginLeft: "1.5rem",
-            }}
-          >
-            <h4 style={{ textAlign: "left", marginLeft: "1rem" }}>
-              Add Recipe:
-            </h4>
-            <form method="POST" id="activityForm">
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  marginTop: "0.5rem",
-                }}
-              >
-                <label
-                  style={{ marginBottom: "0.5rem" }}
-                  htmlFor="name-textbox"
-                ></label>
-                <input
-                  style={{
-                    padding: "0.5rem",
-                    width: "10rem",
-                    marginBottom: "0.5rem",
-                  }}
-                  type="text"
-                  id="name-textbox"
-                  placeholder="Name"
-                  name="name"
-                  value={recipeData.name}
-                  onChange={handleInputs}
-                />
 
-                <label
-                  style={{ marginBottom: "0.5rem", marginTop: "1rem" }}
-                  htmlFor="type-dropdown"
-                ></label>
-                <select
-                  style={{ padding: "0.5rem", width: "10rem" }}
-                  id="type-dropdown"
-                  name="type"
-                  onChange={handleInputs}
-                  value={recipeData.type}
-                >
-                  <option value="">Choose type:</option>
-                  <option value="sugar free">Sugar Free</option>
-                  <option value="carb free">Carb Free</option>
-                  <option value="protein">Protein</option>
-                  <option value="dairy">Dairy</option>
-                  <option value="starch free">Starch Free</option>
-                </select>
-                <br></br>
-                <label
-                  style={{ marginBottom: "0.5rem" }}
-                  htmlFor="Ingred-textbox"
-                ></label>
-                <textarea
-                  style={{ padding: "0.5rem", minHeight: "8rem" }}
-                  id="big-textbox"
-                  placeholder="Ingredients"
-                  name="ingredients"
-                  value={recipeData.ingredients}
-                  onChange={handleInputs}
-                />
-                <br></br>
-                <label
-                  style={{ marginBottom: "0.5rem" }}
-                  htmlFor="Inst-textbox"
-                ></label>
-                <textarea
-                  style={{ padding: "0.5rem", minHeight: "8rem" }}
-                  id="big-textbox"
-                  placeholder="Instructions"
-                  name="instructions"
-                  value={recipeData.instructions}
-                  onChange={handleInputs}
-                />
-                <br></br>
-                <button
-                  style={{
-                    marginTop: "1rem",
-                    padding: "0.5rem 4rem",
-                    borderRadius: "1rem",
-                    backgroundColor: "blue",
-                    color: "white",
-                    border: "none",
-                  }}
-                  type="submit"
-                  onClick={ManageRecipeForm}
-                >
-                  Add
-                </button>
+
+          {displayEditRecipe &&
+            <div className="modal-overlay" onClick={() => setDisplayEditRecipe(false)}>
+              <div id="add-diet" onClick={(event) => event.stopPropagation()}>
+
+                <h4 >Edit Recipe</h4>
+                <form method="POST" id="activityForm">
+
+                  <label htmlFor="name-textbox">
+                    Recipe Name
+                    <input type="text" placeholder='Name' name="name" value={editRecipeData.name} onChange={handleInputs2} />
+                  </label>
+
+                  <label htmlFor="type-dropdown">
+                    Recipe Type
+                    <select
+                      name="type"
+                      onChange={handleInputs2}
+                      value={editRecipeData.type}
+                    >
+                      <option value="">Choose Type</option>
+                      <option value="sugar free">Sugar Free</option>
+                      <option value="carb free">Carb Free</option>
+                      <option value="protein">Protein</option>
+                      <option value="dairy">Dairy</option>
+                      <option value="starch free">Starch Free</option>
+                    </select>
+                  </label>
+
+                  <label htmlFor="Inst-textbox">
+                    Ingredients
+                    <textarea
+                      placeholder="Ingredients"
+                      name="ingredients"
+                      value={editRecipeData.ingredients}
+                      onChange={handleInputs2}
+                    />
+                  </label>
+
+                  <label htmlFor="Inst-textbox">
+                    Instructions
+                    <textarea
+                      placeholder="Instructions"
+                      name="instructions"
+                      value={editRecipeData.instructions}
+                      onChange={handleInputs2}
+                    />
+                  </label>
+
+                  <button
+
+                    type="submit"
+                    onClick={EditRecipeForm}
+                  >
+                    Submit
+                  </button>
+                </form>
+
+
               </div>
-            </form>
-          </div>
 
-          <div
-            style={{
-              position: "absolute",
-              left: "68rem",
-              bottom: "-5rem",
-              padding: "2rem",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-            }}
-          >
-            <h4 style={{ textAlign: "left", marginLeft: "0.8rem" }}>
-              Edit Recipe:
-            </h4>
-            <form method="POST" id="editForm">
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  marginTop: "1rem",
-                }}
-              >
-                <label
-                  style={{ marginBottom: "0.5rem" }}
-                  htmlFor="name-textbox"
-                ></label>
-                <input
-                  style={{
-                    padding: "0.5rem",
-                    width: "10rem",
-                    marginBottom: "0.5rem",
-                  }}
-                  type="text"
-                  id="namee-textbox"
-                  placeholder="Name"
-                  name="name"
-                  value={editRecipeData.name}
-                  onChange={handleInputs2}
-                />
+            </div>
+          }
 
-                <label
-                  style={{ marginBottom: "0.5rem", marginTop: "1rem" }}
-                  htmlFor="type-dropdown"
-                ></label>
-                <select
-                  style={{ padding: "0.5rem", width: "10rem" }}
-                  id="type-dropdown"
-                  name="type"
-                  onChange={handleInputs2}
-                  value={editRecipeData.type}
-                >
-                  <option value="">Choose type:</option>
-                  <option value="sugar free">Sugar Free</option>
-                  <option value="carb free">Carb Free</option>
-                  <option value="protein">Protein</option>
-                  <option value="dairy">Dairy</option>
-                  <option value="starch free">Starch Free</option>
-                </select>
-                <br></br>
-                <label
-                  style={{ marginBottom: "0.5rem" }}
-                  htmlFor="Ingred-textbox"
-                ></label>
-                <textarea
-                  style={{ padding: "0.5rem", minHeight: "8rem" }}
-                  id="big-textbox"
-                  placeholder="Ingredients"
-                  name="ingredients"
-                  value={editRecipeData.ingredients}
-                  onChange={handleInputs2}
-                />
-                <br></br>
-                <label
-                  style={{ marginBottom: "0.5rem" }}
-                  htmlFor="Inst-textbox"
-                ></label>
-                <textarea
-                  style={{ padding: "0.5rem", minHeight: "8rem" }}
-                  id="big-textbox"
-                  placeholder="Instructions"
-                  name="instructions"
-                  value={editRecipeData.instructions}
-                  onChange={handleInputs2}
-                />
-                <br></br>
-                <button
-                  style={{
-                    marginTop: "1rem",
-                    padding: "0.5rem 4rem",
-                    borderRadius: "1rem",
-                    backgroundColor: "blue",
-                    color: "white",
-                    border: "none",
-                  }}
-                  type="submit"
-                  onClick={EditRecipeForm}
-                >
-                  Edit
-                </button>
-              </div>
-            </form>
-          </div>
         </div>
+
       </div>
       <Footer />
     </>

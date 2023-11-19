@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SuperAdminNavbar from './SuperAdminNavbar';
 import Footer from './Footer';
+import SuperAdminSideBar from "./SuperAdminSideBar/SuperAdminSideBar.js";
 
 const SuperAdminProfile = () => {
   const [formData, setFormData] = useState({
@@ -55,7 +56,7 @@ const SuperAdminProfile = () => {
     e.preventDefault();
 
     const { email, name, phone } = formData;
-    if (!phone || phone.length<10 || phone.length>13) {
+    if (!phone || phone.length < 10 || phone.length > 13) {
       window.alert('Invalid Phone Number Length!');
       return;
     }
@@ -77,46 +78,49 @@ const SuperAdminProfile = () => {
       alert("Profile Edited!");
     }
   };
-  
+
 
   return (
     <>
       <SuperAdminNavbar />
-      <div className='home-page'>
-        <h1 id='manageProfile_H1'>Manage Profile</h1>
+      <div className="container-box">
+        <SuperAdminSideBar />
+        <div className="home-page" style={{width:"100%",}}>
+          <h1 id="manageProfile_H1">Manage Profile</h1>
 
-        <div className='profile-main-section'>
-          <div>
-            <h5>Name: {showData.name}</h5>
-            <br />
-            <h5>Phone: {showData.phone}</h5>
+          <div className="profile-main-section">
+            <div>
+              <h5>Name: {showData.name}</h5>
+              <br />
+              <h5>Phone: {showData.phone}</h5>
+            </div>
+
+            <h2>Update Profile</h2>
+            <form name="profileForm" onSubmit={handleFormSubmit}>
+              <label>
+                Name
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="John Doe"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                />
+              </label>
+
+              <label>
+                Phone #
+                <input
+                  type="text"
+                  name="phone"
+                  placeholder="03XX-XXXXXXX"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                />
+              </label>
+              <button type="updateProfile">Update</button>
+            </form>
           </div>
-
-          <h2>Update Profile</h2>
-          <form name='profileForm' onSubmit={handleFormSubmit}>
-            <label>
-              Name
-              <input
-                type='text'
-                name='name'
-                placeholder='John Doe'
-                value={formData.name}
-                onChange={handleInputChange}
-              />
-            </label>
-
-            <label>
-              Phone #
-              <input
-                type='text'
-                name='phone'
-                placeholder='03XX-XXXXXXX'
-                value={formData.phone}
-                onChange={handleInputChange}
-              />
-            </label>
-            <button type='updateProfile'>Update</button>
-          </form>
         </div>
       </div>
       <Footer />

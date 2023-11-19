@@ -9,12 +9,23 @@ const UserProfile = () => {
     phone: ''
   });
 
+  const [showData, setShowData] = useState({
+    email: '',
+    name: '',
+    phone: ''
+  });
+
   useEffect(() => {
     const fetchUserData = async () => {
       try {
         const response = await fetch('/UserHome');
         if (response.ok) {
           const userData = await response.json();
+          setShowData({
+            email: userData.email,
+            name: userData.name,
+            phone: userData.phone,
+          });
           setFormData({
             email: userData.email,
             name: userData.name,
@@ -74,9 +85,9 @@ const UserProfile = () => {
 
         <div className='profile-main-section'>
           <div>
-            <h5>Name: {formData.name}</h5>
+            <h5>Name: {showData.name}</h5>
             <br />
-            <h5>Phone: {formData.phone}</h5>
+            <h5>Phone: {showData.phone}</h5>
           </div>
 
           <h2>Update Profile</h2>

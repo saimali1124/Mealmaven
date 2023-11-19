@@ -9,6 +9,12 @@ const SuperAdminProfile = () => {
     phone: ''
   });
 
+  const [showData, setShowData] = useState({
+    email: '',
+    name: '',
+    phone: ''
+  });
+
   useEffect(() => {
     const fetchUserData = async () => {
       try {
@@ -20,6 +26,12 @@ const SuperAdminProfile = () => {
             name: superAdminData.name,
             phone: superAdminData.phone
           });
+          setShowData({
+            email: superAdminData.email,
+            name: superAdminData.name,
+            phone: superAdminData.phone
+          });
+          console.log(formData);
         } else {
           console.error('Failed to fetch user data');
         }
@@ -75,9 +87,9 @@ const SuperAdminProfile = () => {
 
         <div className='profile-main-section'>
           <div>
-            <h5>Name: {formData.name}</h5>
+            <h5>Name: {showData.name}</h5>
             <br />
-            <h5>Phone: {formData.phone}</h5>
+            <h5>Phone: {showData.phone}</h5>
           </div>
 
           <h2>Update Profile</h2>

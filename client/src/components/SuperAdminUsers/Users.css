@@ -1,0 +1,33 @@
+.users {
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .info {
+    padding: 5px;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+}
+.users .info h1 {
+  color: #333;
+  font-size: 2em;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 10px;
+  button {
+    padding: 5px;
+    cursor: pointer;
+  }
+}
+.addButton {
+  background-color: #0d6efd;
+  padding: 5px;
+  cursor: pointer;
+}

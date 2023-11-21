@@ -634,9 +634,13 @@ button[type="updateProfile"]:hover {
   text-align: center;
   display: inline-block;
   white-space: normal;
-  margin-right: -60vw;
+  margin-right: -53vw;
   margin-top: 60px;
   font-weight: 400;
+}
+
+.content h9{
+  margin-left: -8vw;
 }
 
 .AbHead {
@@ -645,7 +649,8 @@ button[type="updateProfile"]:hover {
   font-size: 55px;
   font-family: Poppins;
   font-weight: bold;
-  margin-top: -30px;
+  margin-top: -20px;
+  margin-bottom: 30px;
 }
 
 .AboutUsText {
@@ -814,6 +819,19 @@ textarea {
 
 #add-diet-button:hover {
   background-color: #0664c9;
+}
+
+@media (max-width: 860px){
+  .parat{
+    margin-right: -1vw;
+    text-shadow: 2px 2px 4px black, 2px 2px 4px black, 2px 2px 4px black,
+    2px 2px 4px black;
+    color: #fcfbfb;
+  }
+
+  .content h9{
+    margin-right: -10vw;
+  }
 }
 
 @media (max-width: 735px) {

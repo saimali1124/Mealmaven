@@ -1,5 +1,5 @@
 
-/* contains styling for articles, blogs,blosinputform and search bar */
+/* contains styling for articles, blogs,blogsinputform and search bar */
 .blog-container 
 {
   display: grid;
@@ -155,13 +155,14 @@
 {
   margin-top: 10px;
   margin-left: 70vw;
+  display: flex;
 }
 .search-button
 {
   color: #000;
   background-color: rgb(208 209 220);
   text-transform: uppercase;
-  height: 33px;
+  height: 37px;
   font-size: 0.8rem;
   font-weight:530;
   text-align: center;
@@ -253,13 +254,13 @@ label {
   .search-box
 {
   margin-top: 5px;
-  margin-left: 20vw;
+  /* margin-left: 50vw; */
 }
 
 .search-button
 {
-  height: 22px;
-  font-size: 0.5rem;
+  height: 40px;
+  font-size: 0.8rem;
   font-weight:200;
   letter-spacing: 0px;
 }
@@ -336,6 +337,29 @@ label {
 
 }
 }
+@media only screen and (max-width : 912px)
+{
+  .button-container
+{
+  margin-left: 0px;
+}
+.search-box
+{
+  margin-top: 5px;
+  margin-left: 45vw;
+}
+
+}
+@media only screen and (max-width : 530px)
+{
+  .search-box
+{
+  margin-top: 5px;
+  margin-left: 17vw;
+}
+
+}
+
 
 @media only screen and (max-width : 360px)
 {
@@ -344,16 +368,10 @@ label {
   margin-left: 14vw;
 }
 
-}
-
-@media only screen and (max-width : 912px)
-{
-  .button-container
-{
-  margin-left: 0px;
-}
 
 }
+
+
 
 /*  */
 

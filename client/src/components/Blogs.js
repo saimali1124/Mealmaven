@@ -117,7 +117,8 @@ function Blogs() {
   
 return (
   <div>
-    <UserNavbar /> 
+    <UserNavbar />
+    <div className='grey-page'> 
     <SearchBar/>
     <h1 className='blog-mainheading'> Our Blogs</h1>
     {Object.keys(articlesByCategory).map((category) => (
@@ -151,6 +152,7 @@ return (
         )}
       </div>
     ))}
+    </div>
         <Footer /> 
 
   </div>

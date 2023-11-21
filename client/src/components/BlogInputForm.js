@@ -12,7 +12,7 @@ const BlogInputForm = () => {
   return (
     <>
     <AdminNavbar/>
-
+<div className='grey-page'>
 
 <h2 className='bloginput'>Blog</h2>
 
@@ -62,6 +62,7 @@ const BlogInputForm = () => {
 
         <button className='formbutton' type="submit">Submit</button>
       </form>
+    </div>
     </div>
     <Footer /> 
 

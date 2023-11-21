@@ -6,6 +6,8 @@ import img2 from '../images/blog2.jpg'
 import img3 from '../images/Dairy.jpg'
 import img4 from '../images/Protein.jpg'
 import Footer from "./Footer";
+import SearchBar from './SearchBar';
+
 function FoodBlogs() {
 
     const [articles, setArticles] = useState([]);
@@ -109,7 +111,8 @@ function FoodBlogs() {
       return (
         <div>
           <UserNavbar /> 
-          <div key="lifestyle">
+          <div key="lifestyle" className='grey-page'>
+            <SearchBar/>
             <h2 className='blog-category'>Food</h2>
             <div className="blog-container">
               {lifestyleArticles.map((article) => (

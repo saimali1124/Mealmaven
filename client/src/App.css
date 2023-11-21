@@ -56,23 +56,72 @@
   margin: 0 auto;
 }
 
-/* .login-form2 {
-  background-color: #fff;
-  border-radius: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-
-  text-align: center;
-} */
 
 .login-form3 {
-  background-color: #fff;
-  border-radius: 20px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  padding: 35px;
-  text-align: center;
-  width: 400px;
-  margin: 0 auto;
-  margin-bottom: 180px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  background-color: #f6f6f6;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  height: 50%;
+  margin-bottom: 20px;
+  border-color: #282c34;
+  border-width: 2px;
+  border-style: solid;
+  overflow-y: auto;
+}
+
+#ingredients-input-form {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  width: 100%;
+  background-color: antiquewhite;
+  margin-bottom: 30px;
+}
+
+#ingredients-input-form input {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  font-size: 20px;
+  width: 100%;
+  height: 70px;
+  padding-left: 20px;
+  border-radius: 10px 0 0 10px;
+  border-color: transparent;
+  outline: none;
+  font-weight: lighter;
+  box-shadow: 1px 4px 10px 2px rgb(225, 225, 225);
+
+
+
+}
+
+#ingredients-input-form button {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  width: 80px;
+  background-color: #282c34;
+  border-color: transparent;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 1px 4px 10px 2px rgb(225, 225, 225);
+}
+
+#ingredients-input-form input:hover {
+  box-shadow: 4px 4px 10px 4px rgb(225, 225, 225);
+}
+
+#ingredients-input-form button:hover {
+  background-color: #444a57;
 }
 
 .form-title {
@@ -156,10 +205,8 @@
 }
 
 .home-page {
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.7),
-      rgba(255, 255, 255, 0.7)
-    ),
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7)),
     url("https://images.unsplash.com/photo-1556911220-bff31c812dba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY3MzkxNTEyNQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080");
   background-repeat: no-repeat;
   background-size: cover;
@@ -169,11 +216,9 @@
 }
 
 .grey-page {
-  background: radial-gradient(
-    circle at 18.7% 37.8%,
-    rgb(250, 250, 250) 0%,
-    rgb(225, 234, 238) 90%
-  );
+  background: radial-gradient(circle at 18.7% 37.8%,
+      rgb(250, 250, 250) 0%,
+      rgb(225, 234, 238) 90%);
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -183,22 +228,28 @@
 }
 
 .grey-page3 {
-  background: radial-gradient(
-    circle at 18.7% 37.8%,
-    rgb(250, 250, 250) 0%,
-    rgb(225, 234, 238) 90%
-  );
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
   background-size: cover;
-  background-position: center center;
-  height: 100%;
-  /* Set the height to the full viewport height */
+  background-position: center;
   width: 100%;
   display: flex;
-  /* Use flexbox to align the text vertically */
   flex-direction: column;
-  /* Stack the text vertically */
-  justify-content: flex-start;
-  /* Align the text to the top */
+  height: calc(100vh - 60px);
+  overflow: hidden;
+
+}
+
+.grey-page3 h1 {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  text-align: center;
+  margin: auto;
 }
 
 .form-submit {
@@ -265,9 +316,22 @@
 }
 
 .custrecipe {
-  border: 1px solid #807f7f;
-  margin-bottom: 20px;
-  padding: 20px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  max-width: 700px;
+  width: 100%;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: flex-end;
+
+
 }
 
 .recipe {
@@ -364,7 +428,7 @@ button {
   margin-top: 20px;
 }
 
-.profile-main-section div > h5,
+.profile-main-section div>h5,
 .assign-diet h2,
 .assign-diet p {
   text-overflow: ellipsis;
@@ -372,12 +436,12 @@ button {
   overflow: hidden;
 }
 
-.profile-main-section > h2 {
+.profile-main-section>h2 {
   text-align: center;
   margin-top: 100px;
 }
 
-.profile-main-section > form,
+.profile-main-section>form,
 .login-form2 {
   margin-top: 30px;
   margin-bottom: 10px;
@@ -397,12 +461,12 @@ button {
   margin-top: 20px;
 }
 
-.profile-main-section > form input {
+.profile-main-section>form input {
   padding: 10px 10px;
 }
 
-.login-form2 > input,
-.login-form2 > textarea {
+.login-form2>input,
+.login-form2>textarea {
   padding: 7px;
 }
 
@@ -412,7 +476,7 @@ button {
   width: 100%;
 }
 
-.profile-main-section > form button {
+.profile-main-section>form button {
   margin-top: 30px;
 }
 
@@ -458,11 +522,9 @@ button {
   padding: 20px;
   padding-top: 5vw;
   /* padding-top: 3vw; */
-  background: radial-gradient(
-    circle at 18.7% 37.8%,
-    rgb(250, 250, 250) 0%,
-    rgb(225, 234, 238) 90%
-  );
+  background: radial-gradient(circle at 18.7% 37.8%,
+      rgb(250, 250, 250) 0%,
+      rgb(225, 234, 238) 90%);
   background-size: cover;
   background-position: center;
 }
@@ -473,7 +535,7 @@ button {
   /* background-color: #007bff; */
 }
 
-.food-info > div {
+.food-info>div {
   width: 40%;
   /* background-color: #007bff; */
   margin: auto;
@@ -639,7 +701,7 @@ button[type="updateProfile"]:hover {
   font-weight: 400;
 }
 
-.content h9{
+.content h9 {
   margin-left: -8vw;
 }
 
@@ -722,7 +784,7 @@ h8 {
   text-shadow: 5px 0px 5px rgb(0, 0, 5);
 }
 
-h1 > br {
+h1>br {
   display: none;
 }
 
@@ -821,26 +883,27 @@ textarea {
   background-color: #0664c9;
 }
 
-@media (max-width: 860px){
-  .parat{
+@media (max-width: 860px) {
+  .parat {
     margin-right: -1vw;
     text-shadow: 2px 2px 4px black, 2px 2px 4px black, 2px 2px 4px black,
-    2px 2px 4px black;
+      2px 2px 4px black;
     color: #fcfbfb;
   }
 
-  .content h9{
+  .content h9 {
     margin-right: -10vw;
   }
 }
 
 @media (max-width: 735px) {
-  h1 > br {
+  h1>br {
     display: block;
   }
 }
 
 @media (max-width: 500px) {
+
   .text-content,
   h8 {
     text-align: center;
@@ -889,7 +952,7 @@ textarea {
     /* background-color: #152F4F;*/
   }
 
-  .food-info > div {
+  .food-info>div {
     margin-top: 50px;
     width: 100%;
     /* background-color: #007bff; */
@@ -909,7 +972,7 @@ textarea {
     /* background-color: #152F4F;*/
   }
 
-  .food-info > div {
+  .food-info>div {
     margin-top: 50px;
     width: 100%;
     /* background-color: #007bff; */
@@ -929,7 +992,7 @@ textarea {
     /* background-color: #152F4F;*/
   }
 
-  .food-info > div {
+  .food-info>div {
     margin-top: 50px;
     width: 100%;
     /* background-color: #007bff; */
@@ -953,6 +1016,7 @@ textarea {
     height: 250px;
   }
 }
+
 @media (max-width: 992px) {
   .navbar-collapse {
     z-index: 1;
@@ -972,6 +1036,7 @@ textarea {
     transform: translateX(0);
   }
 }
+
 .nav-item {
   position: relative;
 }

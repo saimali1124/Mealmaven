@@ -2,10 +2,9 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import "./DataGrid.css";
 import { Box } from "@mui/system";
 import deletelogo from "../../images/Delete.svg";
+import axios from "axios";
 
 const DataTable = (props) => {
-  const handleDelete = (id) => {};
-
   const actionColumn = {
     field: "action",
     headerName: "Action",
@@ -15,10 +14,7 @@ const DataTable = (props) => {
     renderCell: (params) => {
       return (
         <div className="action">
-          {/* <Link to={`/${props.slug}/${params.row.id}`}>
-            <img src={viewlogo} alt="" />
-          </Link> */}
-          <div className="delete" onClick={() => handleDelete(params.row.id)}>
+          <div className="delete" onClick={() => props.handleDelete(params.row.email)}>
             <img src={deletelogo} alt="" />
           </div>
         </div>

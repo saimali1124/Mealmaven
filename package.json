@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "dotenv": "^16.3.1",
-    "parallax": "^0.0.0"
+    "file-saver": "^2.0.5",
+    "parallax": "^0.0.0",
+    "react-to-print": "^2.14.15"
   },
   "devDependencies": {
     "svg-url-loader": "^8.0.0"

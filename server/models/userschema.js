@@ -22,6 +22,7 @@ const userschema = new mongoose.Schema({
         type: String,
         required: true
     },
+       
     activity: [
     {
         foodIntake: {
@@ -49,8 +50,13 @@ const userschema = new mongoose.Schema({
     hasPremiumAccess: {
         type: Boolean,
         required:false
-    }
-});
+    },
+    premiumObtainedOn:{
+type:Date,
+required:false
+}
+},
+{ timestamps: true });
 
 userschema.methods.generateAuthToken = async function () {
     try {

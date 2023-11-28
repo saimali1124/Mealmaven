@@ -1,8 +1,8 @@
 // Article.js
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import UserNavbar from "./UserNavbar";
-import img1 from '../images/blog2.jpg'
+import UserNavbar from "../UserNavbar";
+import img1 from '../../images/blog1.jpeg'
 
 
 function Article() {

@@ -13,6 +13,7 @@ const User = require("../models/userschema");
 const Admin = require("../models/adminschema");
 const SuperAdmin = require("../models/superadminschema");
 
+
 router.get('/', (req, res) => {
     res.send("Hello from server");
 });
@@ -407,5 +408,10 @@ router.put('/updateProfileSuperAdmin/:email', async (req, res) => {
       res.status(500).json({ error: 'error' });
     }
   });
+
+
+
+
+  
 
 module.exports = router;

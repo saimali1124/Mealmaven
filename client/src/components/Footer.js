@@ -25,7 +25,7 @@ const Footer = () => {
             </div>
             <div className="col-lg-4 col-xs-12 location">
               <h4 className="mt-lg-0 mt-sm-4">Location</h4>
-              <p> 90, Sheldom Street, Lahore, Pakistan</p>
+              <a href="https://www.google.com/maps/place/31.5120728,74.3767958" target="_blank"> 90, Sheldom Street, Lahore, Pakistan</a>
               <p className="mb-0"><i class='bx bxs-phone'></i>&nbsp;(+92) 423-57689</p>
               <p><i class='bx bx-envelope' ></i>&nbsp;info@MealMaven.com</p>
 

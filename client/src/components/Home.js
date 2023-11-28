@@ -44,9 +44,6 @@ const Home = () => {
           </div>
         </Parallax>
 
-        {/* <div>
-        </div> */}
-
       </div>
       <Footer />
     </>

@@ -205,8 +205,8 @@ export const columns = [
     width: 250,
   },
   {
-    field: "phone",
-    headerName: "Phone",
+    field: "updatedAt",
+    headerName: "Updated At",
     width: 250,
   },
   {

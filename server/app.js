@@ -10,6 +10,7 @@ app.use(express.json());
 
 app.use(require('./router/auth'));
 app.use(require('./router/recip'));
+app.use(require('./router/superAdmin'));
 
 app.get('/contact', (req, res) => {
     res.send("Hello contact");

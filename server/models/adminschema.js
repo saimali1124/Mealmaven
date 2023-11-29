@@ -1,51 +1,54 @@
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 
-const adminschema = new mongoose.Schema({
+const adminschema = new mongoose.Schema(
+  {
     name: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     email: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
-    phone: { 
-        type: Number,
+    phone: {
+      type: Number,
     },
     password: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     cpassword: {
-        type: String,
-        required: true
+      type: String,
+      required: true,
     },
     activity: [
-    {
+      {
         foodIntake: {
-            type: String,
-            required: true
+          type: String,
+          required: true,
         },
-	    steps: {
-            type: Number,
-            required: true
+        steps: {
+          type: Number,
+          required: true,
         },
         date: {
-            type: Date,
-            default: Date.now
-            }
-        }
+          type: Date,
+          default: Date.now,
+        },
+      },
     ],
     tokens: [
-        {
-            token: {
-                type:String,
-                required:true
-            }
-        }
-    ]
-});
+      {
+        token: {
+          type: String,
+          required: true,
+        },
+      },
+    ],
+  },
+  { timestamps: true }
+);
 
 adminschema.methods.generateAuthToken = async function () {
     try {

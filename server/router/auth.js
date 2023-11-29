@@ -59,6 +59,7 @@ const { name, email, phone, password, cpassword} =req.body;
 
 //admin Register
 router.post('/registerAdmin', async (req, res) => {
+    console.log("AT endpoint",req)    
     const { name, email, password, cpassword} = req.body;
     
         if (!name || !email || !password || !cpassword)
@@ -95,6 +96,7 @@ router.post('/registerAdmin', async (req, res) => {
 
 //super admin Register
 router.post('/registerSuperAdmin', async (req, res) => {
+console.log(req)
     const { name, email, password, cpassword} = req.body;
     
         if (!name || !email || !password || !cpassword)
@@ -326,6 +328,7 @@ router.post('/Payment', async (req, res) => {
         if(user)
         {
             user.hasPremiumAccess = true;
+            user.premiumObtainedOn = new Date();
             await user.save();
         }
       console.log("success");

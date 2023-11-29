@@ -2,6 +2,7 @@ import "./ChartBox.css";
 import { Line, LineChart, ResponsiveContainer, Tooltip } from "recharts";
 
 const ChartBox = (props) => {
+const durationText = props.title === "Total Revenue This Week" ? "this week" : "this month";
   return (
     <div className="chartBox">
       <div className="boxInfo">
@@ -37,7 +38,7 @@ const ChartBox = (props) => {
           >
             {props.percentage}%
           </span>
-          <span className="duration">this month</span>
+          <span className="duration">{durationText}</span>
         </div>
       </div>
     </div>

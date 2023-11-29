@@ -7,7 +7,7 @@ const authenticateSuperAdmin = require("../middleware/authenticateSuperAdmin");
 const cokie = require ('cookie-parser');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 router.use(cokie());
-
+const bcrypt = require("bcryptjs");
 require('../db/connect'); 
 const User = require("../models/userschema");
 const Admin = require("../models/adminschema");
@@ -37,8 +37,17 @@ const { name, email, phone, password, cpassword} =req.body;
             return res.status(422).json({error: "Passwords not matching"});
         }
         else {
-            const user = new User({name, email, phone, password, cpassword});
             
+            const hashedPassword = await bcrypt.hash(password, 10); // Hash the password
+
+            const user = new User({
+              name,
+              email,
+              phone,
+              password: hashedPassword,
+              cpassword: hashedPassword,
+            });
+
             const userRegister = await user.save();
 
             if(userRegister) {
@@ -78,7 +87,14 @@ router.post('/registerAdmin', async (req, res) => {
                 return res.status(422).json({error: "Passwords not matching"});
             }
             else {
-                const admin = new Admin({name, email, password, cpassword});
+                const hashedPassword = await bcrypt.hash(password, 10); // Hash the password
+
+                const admin = new Admin({
+                  name,
+                  email,
+                  password: hashedPassword,
+                  cpassword: hashedPassword,
+                });
                 
                 const adminRegister = await admin.save();
     
@@ -115,7 +131,14 @@ console.log(req)
                 return res.status(422).json({error: "Passwords not matching"});
             }
             else {
-                const superAdmin = new SuperAdmin({name, email, password, cpassword});
+                const hashedPassword = await bcrypt.hash(password, 10); // Hash the password
+
+                const superAdmin = new SuperAdmin({
+                  name,
+                  email,
+                  password: hashedPassword,
+                  cpassword: hashedPassword,
+                });
                 
                 const SuperAdminRegister = await superAdmin.save();
     
@@ -146,7 +169,7 @@ router.post('/signin', async (req, res)=> {
 
         if(userLogin)
         {
-            var isMatch = (password==userLogin.password);
+            var isMatch = await bcrypt.compare(password, userLogin.password);
         }
 
         if(userLogin)
@@ -191,7 +214,7 @@ router.post('/signinAdmin', async (req, res)=> {
 
         if(userLogin)
         {
-            var isMatch = (password==userLogin.password);
+            var isMatch = await bcrypt.compare(password, userLogin.password);
         }
 
         if(userLogin)
@@ -236,7 +259,10 @@ router.post('/signinSuperAdmin', async (req, res)=> {
 
         if(SuperAdminLogin)
         {
-            var isMatch = (password==SuperAdminLogin.password);
+            var isMatch = await bcrypt.compare(
+              password,
+              SuperAdminLogin.password
+            );
         }
 
         if(SuperAdminLogin)

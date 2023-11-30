@@ -19,6 +19,7 @@ app.use(express.urlencoded({  }));
 app.use(require('./router/auth'));
 app.use(require('./router/recip'));
 app.use(require('./router/blogsbackend'));
+app.use(require('./router/superAdmin'));
 app.use('/image', express.static(path.join(__dirname, 'uploads')));
 
 

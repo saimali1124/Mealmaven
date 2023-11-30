@@ -100,6 +100,7 @@ const BlogInputForm = () => {
   return (
     <>
     <AdminNavbar/>
+    <div className='grey-page'>
 
 
 <h2 className='bloginput'>Blog</h2>
@@ -159,8 +160,9 @@ const BlogInputForm = () => {
 
       </form>
     </div>
+    </div>
     <Footer /> 
-
+      
     </>
 
   );

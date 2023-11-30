@@ -2,7 +2,6 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import "./App.css";
-import "./blogs.css";
 import UserSignup from "./components/UserSignup";
 import UserLogin from "./components/UserLogin";
 import ErrorPage from "./components/ErrorPage";
@@ -26,17 +25,24 @@ import SuperAdminSignup from "./components/SuperAdminSignup";
 import SuperAdminLogin from "./components/SuperAdminLogin";
 import SuperAdminHome from "./components/SuperAdminHome";
 import UserProfile from "./components/UserProfile";
-import Blogs from "./components/Blogs";
-import Article from "./components/Article";
-import LifeStyleBlogs from "./components/LifeStyleBlogs";
-import FitnessBlogs from "./components/FitnessBlogs";
-import FoodBlogs from "./components/FoodBlogs";
-import BlogInputForm from "./components/BlogInputForm";
+
+import Blogs from "./components/Blogs/Blogs";
+import Article from "./components/Blogs/Article";
+import LifeStyleBlogs from "./components/Blogs/LifeStyleBlogs";
+import FitnessBlogs from "./components/Blogs/FitnessBlogs";
+import FoodBlogs from "./components/Blogs/FoodBlogs";
+import BlogInputForm from "./components/Blogs/BlogInputForm";
+
+
 import Charts from "./components/SuperAdminCharts/Charts";
 import AdminProfile from "./components/AdminProfile";
 import SuperAdminProfile from "./components/SuperAdminProfile";
 import Users from "./components/SuperAdminUsers/Users";
 import Nutrionists from "./components/SuperAdminUsers/Nutrionists";
+import BlogResults from "./components/Blogs/BlogResults";
+import AdminBlogs from "./components/Blogs/AdminBlogs";
+import AdminArticle from "./components/Blogs/AdminArticle";
+
 
 const App = () => {
   return (
@@ -93,11 +99,18 @@ const App = () => {
         <Route path="/blogscategory/fitness" element={<FitnessBlogs />} />
         <Route path="/blogscategory/food" element={<FoodBlogs />} />
         <Route path="/BlogInput" element={<BlogInputForm />} />
+
+
+
+       
         <Route path="/AdminProfile" element={<AdminProfile />} />
         <Route path="/SuperAdminProfile" element={<SuperAdminProfile />} />
         <Route path="/Charts" element={<Charts />} />
         <Route path="/Users" element={<Users />} />
         <Route path="/Nutrionists" element={<Nutrionists />} />
+        <Route path="/blogslist" element={<BlogResults />} />
+        <Route path="/ViewBlogs" element={<AdminBlogs />} />
+        <Route path="/adminarticle/:id" element={<AdminArticle />} />
       </Routes>
     </>
   );

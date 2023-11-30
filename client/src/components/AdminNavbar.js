@@ -101,6 +101,11 @@ const [isSidebarOpen, setSidebarOpen] = useState(false);
                 </NavLink>
               </li>
               <li className="nav-item">
+                <NavLink className="nav-link" to="/ViewBlogs">
+                  View Blogs
+                </NavLink>
+              </li>
+              <li className="nav-item">
                 <NavLink className="nav-link" to="/AdminProfile">
                   Profile
                 </NavLink>

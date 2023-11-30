@@ -6,30 +6,26 @@ import Footer from "../Footer";
 import SearchBar from './SearchBar';
 import './blogs.css'
 
-
-
-
-
 function Blogs() {
 
   const [articles, setArticles] = useState([]);
+
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await fetch('/getblogs'); // Adjust the URL as necessary
-        if (!response.ok) {
-          window.alert("Blogs not found")
-        }
+        const response = await fetch('/getblogs');
         const data = await response.json();
         setArticles(data);
-      } 
-      catch (error) {
+        console.log(data); // Log the received data
+
+      } catch (error) {
         console.error('Error fetching articles:', error);
       }
     };
 
     fetchArticles();
   }, []);
+
 
 
 
@@ -48,7 +44,7 @@ function Blogs() {
 return (
   <div>
     <UserNavbar /> 
-    <SearchBar/>
+    <SearchBar category={"abc"} />
     <h1 className='blog-mainheading'> Our Blogs</h1>
     {Object.keys(articlesByCategory).map((category) => (
       <div key={category}>
@@ -58,7 +54,7 @@ return (
             <div key={article._id} >
               <div className='blog-box'>
 
-              <img src={article.imageData} alt={article.title} />
+              <img src={`/image/${article.imagePath.replace(/\\/g, '/').replace('uploads/', '')}`} alt={article.title} />
               </div>
               
               <h3 className='article-title'>{article.title}</h3>

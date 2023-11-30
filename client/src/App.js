@@ -36,6 +36,8 @@ import AdminProfile from "./components/AdminProfile";
 import SuperAdminProfile from "./components/SuperAdminProfile";
 import Users from "./components/SuperAdminUsers/Users";
 import Nutrionists from "./components/SuperAdminUsers/Nutrionists";
+import BlogResults from "./components/Blogs/BlogResults";
+import AdminBlogs from "./components/Blogs/AdminBlogs";
 
 const App = () => {
   return (
@@ -97,6 +99,9 @@ const App = () => {
         <Route path="/Charts" element={<Charts />} />
         <Route path="/Users" element={<Users />} />
         <Route path="/Nutrionists" element={<Nutrionists />} />
+        <Route path="/blogslist" element={<BlogResults />} />
+        <Route path="/ViewBlogs" element={<AdminBlogs />} />
+
 
       </Routes>
     </>

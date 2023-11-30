@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 
 const blogSchema = new mongoose.Schema({
-  userEmail: 
+  email: 
   { type: String, 
     required: true },
   title: 
@@ -14,9 +14,19 @@ const blogSchema = new mongoose.Schema({
   category: 
   { type: String, 
     required: true },
-  imageData: 
-  { type: Buffer } // storing image as binary datas
-});
+    
+    imagePath: { type: String, 
+      required: true },
+        
+    author: { type: String, 
+      required: true },
+      date: { type: String, 
+        required: true },
+      
+
+
+
+  });
 
 const Blog = mongoose.model('BLOG', blogSchema);
 module.exports = Blog;

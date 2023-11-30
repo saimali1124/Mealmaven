@@ -1,103 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import UserNavbar from "../UserNavbar";
-import img1 from '../../images/blog1.jpeg'
-import img2 from '../../images/blog2.jpg'
-import img3 from '../../images/Dairy.jpg'
-import img4 from '../../images/Protein.jpg'
+
 import SearchBar from './SearchBar';
 
 import Footer from "../Footer";
 function FitnessBlogs() {
 
-    const [articles, setArticles] = useState([]);
-  
-    useEffect(() => {
-      const sampleArticles = [
-        {
-          id: 1,
-          title: 'The Minimum Effective Dose',
-          content: 'This is the content of Sample Article 1.',
-          imageUrl: img1,
-          category: 'fitness'
-        },
-        {
-          id: 2,
-          title: 'Breaking Muscle',
-          content: 'This is the content of Sample Article 2.',
-          imageUrl: img2,
-          category: 'fitness'
-  
-        },
-        {
-          id: 3,
-          title: 'Well + Good ',
-          content: 'This is the content of Sample Article 2.',
-          imageUrl: img3,
-          category: 'fitness'
-  
-        },
-        {
-          id: 4,
-          title: 'Sample Article 3',
-          content: 'This is the content of Sample Article 2.',
-          imageUrl: img4,
-          category: 'fitness'
-  
-        },
-        {
-          id: 5,
-          title: 'Well + Good ',
-          content: 'This is the content of Sample Article 2.',
-          imageUrl: img1,
-          category: 'fitness'
-  
-        }, {
-          id: 6,
-          title: 'Well + Good ',
-          content: 'This is the content of Sample Article 2.',
-          imageUrl: img2,
-          category: 'fitness'
-  
-        },
-        {
-          id: 7,
-          title: 'Well + Good ',
-          content: 'This is the content of Sample Article 2.',
-          imageUrl: img2,
-          category: 'lifestyle'
-  
-        },
-        {
-          id: 8,
-          title: 'Well + Good ',
-          content: 'This is the content of Sample Article 2.',
-          imageUrl: img1,
-          category: 'lifestyle'
-  
-        },
-        {
-          id: 9,
-          title: 'Well + Good ',
-          content: 'This is the content of Sample Article 2.',
-          imageUrl: img3,
-          category: 'food'
-  
-        },
-        {
-          id: 10,
-          title: 'Well + Good ',
-          content: 'This is the content of Sample Article 2.',
-          imageUrl: img1,
-          category: 'food'
-  
-        }
-  
-  
-      ];
-  
-      setArticles(sampleArticles);
-    }, []);
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        const response = await fetch('/getblogs');
+        const data = await response.json();
+        setArticles(data);
+        console.log(data); 
+
+      } catch (error) {
+        console.error('Error fetching articles:', error);
+      }
+    };
+
+    fetchArticles();
+  }, []);
+
     const articlesByCategory = articles.reduce((acc, article) => {
         acc[article.category] = acc[article.category] || [];
         acc[article.category].push(article);
@@ -105,24 +32,24 @@ function FitnessBlogs() {
         return acc;
       }, {});
     
-      // Get blogs of the "lifestyle" category only
-      const lifestyleArticles = articlesByCategory['fitness'] || [];
+      //  blogs of the "lifestyle" category only
+      const lifestyleArticles = articlesByCategory['Fitness'] || [];
     
       return (
         <div>
           <UserNavbar /> 
-          <SearchBar/>
+          <SearchBar category="Fitness" />
 
           <div key="lifestyle">
             <h2 className='blog-category'>Fitness</h2>
             <div className="blog-container">
               {lifestyleArticles.map((article) => (
-                <div key={article.id}>
+                <div key={article._id}>
                   <div className='blog-box'>
-                    <img src={article.imageUrl} alt={article.title} />
+                  <img src={`/image/${article.imagePath.replace(/\\/g, '/').replace('uploads/', '')}`} alt={article.title} />
                   </div>
                   <h3 className='article-title'>{article.title}</h3>
-                  <Link to={`/article/${article.id}`} className='view-article'>
+                  <Link to={`/article/${article._id}`} className='view-article'>
                     <h2>Read Here</h2>
                   </Link>
                 </div>

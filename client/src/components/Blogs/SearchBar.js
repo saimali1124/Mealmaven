@@ -1,27 +1,43 @@
-import React, { useState, useEffect } from "react";
-import { FaSearch } from 'react-icons/fa';
+import React, { useState } from "react";
+
+import { useNavigate } from 'react-router-dom';
 
 
 
-function SearchBar() 
-{
+function SearchBar({ category }) {
+  const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const handleSearch = () => {
+    const queryParam = `query=${encodeURIComponent(searchTerm)}`;
+    const categoryParam = category ? `&category=${encodeURIComponent(category)}` : '';
+
+  navigate(`/blogslist?${queryParam}&${categoryParam}`);
+  };
+
+
+  
+  
   return (
     <> 
     <div className="search-box">
       <input
         type="text"
         placeholder="Search Here..."
-        // value={searchTerm}
-        // onChange={handleChange}
+        onChange={handleChange}
       />
 
-      {/* <div className="search-container">  */}
-      <button className="search-button" >Search</button>   
-      {/* onClick={handleSearch} */}
+      <button className="search-button"  onClick={handleSearch}>Search</button>   
       {/* </div> */}
       {/* <FaSearch /> */}
 
       </div>
+
+
 
 
     </>

@@ -68,6 +68,16 @@
 
 
 }
+.adminblog-mainheading
+{
+  font-family:sans-serif;
+  text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 .blog-category
 {
   font-family:sans-serif;

@@ -23,10 +23,6 @@ app.use(require('./router/superAdmin'));
 app.use('/image', express.static(path.join(__dirname, 'uploads')));
 
 
-
-
-
-
 app.get('/contact', (req, res) => {
     res.send("Hello contact");
 });

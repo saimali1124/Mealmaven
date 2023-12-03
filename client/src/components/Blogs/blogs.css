@@ -84,9 +84,14 @@
     text-align: center;
     letter-spacing: 1.5px;
   margin-top: 20px;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color:#434040
+}
+.noadminblogs
+{
+  margin-left: 20vw;
+  width: 50vw;
 }
 .blog-category
 {
@@ -393,6 +398,14 @@ label {
   margin-top: 0px;
   margin-left: 10px;
   margin-bottom: 0px;
+
+}
+.adminblog-mainheading
+{
+ 
+    letter-spacing: 1px;
+  margin-top: 20px;
+  font-size: 1.1rem;
 
 }
 }

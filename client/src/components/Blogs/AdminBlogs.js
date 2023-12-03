@@ -122,7 +122,7 @@ const AdminBlogs =  () => {
             ))
 
           ) : (
-            <div> 
+            <div className='noadminblogs'> 
               <h1 className="search-category">No blogs found.</h1>
               <h2 className="article-title"> Start by creating a new blog.</h2>
             </div>
